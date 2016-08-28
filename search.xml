@@ -4,6 +4,75 @@
   
     
     <entry>
+      <title><![CDATA[Mysql install uninstall and simple use]]></title>
+      <url>http://yoursite.com/2016/08/28/mysql/</url>
+      <content type="html"><![CDATA[<h1>Mysql install uninstall and simple use</h1>
+<hr>
+<h2>MAC下安装</h2>
+<h3>推荐使用homebrew安装</h3>
+<p>执行下列安装命令</p>
+<p>更新brew
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew  update</div></pre></td></tr></table></figure></p>
+<p>安装mysql
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install mysql</div></pre></td></tr></table></figure></p>
+<p>安装完之后会出现提示：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">We&apos;ve installed your MySQL database without a root password. To secure it run: `mysql_secure_installation`</div><div class="line">To connect run: `mysql -u root` To have launchd start mysql at login:</div><div class="line">ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents</div><div class="line">Then to load mysql now:</div><div class="line">launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist</div><div class="line">Or, if you don&apos;t want/need launchctl, you can just run:</div><div class="line"></div><div class="line">mysql.server start</div></pre></td></tr></table></figure></p>
+<p><code>此处仅为了解即可，建议不要执行以下该命令</code>
+然后执行<strong>mysql_secure_installation</strong> 会出现</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line">&gt; Securing the MySQL server deployment.</div><div class="line">&gt;</div><div class="line">Connecting to MySQL using a blank password.</div><div class="line">&gt;</div><div class="line">VALIDATE PASSWORD PLUGIN can be used to test passwords</div><div class="line">and improve security. It checks the strength of password</div><div class="line">and allows the users to set only those passwords which are</div><div class="line">secure enough. Would you like to setup VALIDATE PASSWORD plugin?</div><div class="line">&gt;</div><div class="line">Press y|Y for Yes, any other key for No: No</div><div class="line">Please set the password for root here.</div><div class="line">&gt;</div><div class="line">New password:  Vaystar@0917</div><div class="line">&gt;</div><div class="line">Re-enter new password:</div><div class="line">By default, a MySQL installation has an anonymous user,</div><div class="line">allowing anyone to log into MySQL without having to have</div><div class="line">a user account created for them. This is intended only for</div><div class="line">testing, and to make the installation go a bit smoother.</div><div class="line">You should remove them before moving into a production</div><div class="line">environment.</div><div class="line">&gt;</div><div class="line">Remove anonymous users? (Press y|Y for Yes, any other key for No) : y</div><div class="line">Success.</div><div class="line">&gt;</div><div class="line">&gt;</div><div class="line">Normally, root should only be allowed to connect from</div><div class="line">&apos;localhost&apos;. This ensures that someone cannot guess at</div><div class="line">the root password from the network.</div><div class="line">&gt;</div><div class="line">Disallow root login remotely? (Press y|Y for Yes, any other key for No) : N</div><div class="line"> ... skipping.</div><div class="line">By default, MySQL comes with a database named &apos;test&apos; that</div><div class="line">anyone can access. This is also intended only for testing,</div><div class="line">and should be removed before moving into a production</div><div class="line">environment.</div><div class="line">&gt;</div><div class="line">&gt;</div><div class="line">Remove test database and access to it? (Press y|Y for Yes, any other key for No) : y</div><div class="line"> -Dropping test database...</div><div class="line">Success.</div><div class="line">&gt;</div><div class="line"> -Removing privileges on test database...</div><div class="line">Success.</div><div class="line">&gt;</div><div class="line">Reloading the privilege tables will ensure that all changes</div><div class="line">made so far will take effect immediately.</div><div class="line">&gt;</div><div class="line">Reload privilege tables now? (Press y|Y for Yes, any other key for No) : y</div><div class="line">Success.</div><div class="line">&gt;</div><div class="line">All done!</div><div class="line"></div><div class="line">到此安装完毕，使用时输入mysql -u root -p 的命令即可，输入密码</div><div class="line">我的密码为:  安装于`2016.8.26`</div><div class="line"></div><div class="line">Vaystar@0917</div></pre></td></tr></table></figure></p>
+<h3>出现的问题</h3>
+<h4>CLI下输入MySQL command not found</h4>
+<p>问题分析：环境变量设置不对
+解决方法：
+在.zshrc 中写入，之后source一下即可。</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export PATH=$PATH:/usr/local/mysql/bin</div></pre></td></tr></table></figure></p>
+<h3>自己尝试的错误</h3>
+<p>开始在官网上下载dmg 的安装包，正常安装后出现下列问题
+http://stackoverflow.com/questions/33326065/unable-to-access-mysql-after-it-automatically-generated-a-temporary-password
+mysql会自动的生成一个random password，但你在使用<strong>mysql -u root -p</strong> 后输入该随机的密码时又会出错，在网上找了各种方法无果。
+所以，</p>
+<blockquote>
+<p>mac下安装不推荐使用dmg安装</p>
+</blockquote>
+<p>遂之后使用  brew install mysql 安装，开始有些冲突，最后莫名其妙的好了，也是醉了。</p>
+<h2>MAC下卸载</h2>
+<p>1.关闭mysql服务</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql.server stop</div></pre></td></tr></table></figure></p>
+<p>2.依次执行以下命令</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">sudo rm /usr/local/mysql   </div><div class="line">sudo rm -rf /usr/local/mysql*</div><div class="line">sudo rm -rf /Library/StartupItems/MySQLCOM</div><div class="line">sudo rm -rf /Library/PreferencePanes/My*</div><div class="line">rm -rf ~/Library/PreferencePanes/My*</div><div class="line">sudo rm -rf /Library/Receipts/mysql*</div><div class="line">sudo rm -rf /Library/Receipts/MySQL*</div><div class="line">sudo rm -rf /private/var/db/receipts/*mysql*</div><div class="line">sudo rm -rf /var/db/receipts/com.mysql.</div><div class="line">调用vim /etc/hostconfig，删除 MYSQLCOM=-YES-这一行。</div></pre></td></tr></table></figure></p>
+<p>3.在根目录下执行以下命令 查找依旧存在的mysql  并删除 千万别乱删，容易出事
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . mysql | grep mysql</div></pre></td></tr></table></figure></p>
+<p>可以删除</p>
+<ul>
+<li>/usr/local/var/mysql  整个文件</li>
+<li>/usr/local/share/mysql</li>
+<li>/usr/local/Cellar/mysql  整个文件</li>
+</ul>
+<p><code>Note:</code> 可能会发现以上的命令在执行时根本不存在或者没有该文件，是因为mysql 的版本不同导致。</p>
+<p>参考链接</p>
+<p>1.stackoverflow：http://stackoverflow.com/questions/1436425/how-do-you-uninstall-mysql-from-mac-os-x</p>
+<p>2.http://www.jb51.net/article/81447.htm</p>
+<p>日志：
+2016.8.28</p>
+<p>使用brew install mysql  ，但是手贱执行mysql_secure_installation，并设置了中级难度的root密码，结果发现在跑黑工项目时，默认的root密码是空，我就GG了，其实改一下项目的配置文件就好了，但是强迫症 + 完美主义患者是不喜欢凑合的，所以研究了一下如何卸载重装mysql</p>
+<h2>How to start run and stop</h2>
+<p>Usage: mysql.server  {start|stop|restart|reload|force-reload|status}  [ MySQL server options ]</p>
+<blockquote>
+<p>mysql.server start</p>
+</blockquote>
+<blockquote>
+<p>mysql.server stop</p>
+</blockquote>
+<blockquote>
+<p>mysql.server restart</p>
+</blockquote>
+<blockquote>
+<p>mysql.server status</p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[java 基础]]></title>
       <url>http://yoursite.com/2016/08/23/java-basic/</url>
       <content type="html"><![CDATA[<h1>Java Basic</h1>

@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Blog," />
+  <meta name="keywords" content="docker,AWS," />
 
 
 
@@ -84,27 +84,46 @@
 
 
 
-<meta name="description" content="搭建个人博客（一）
-前言
-作为一个程序员，平时有一些好的想法，或者笔记想要记录；虽然有很多不错的网站，比如博客园，CSDN······· 但作为一个支持开源的用户，和一个技术控，怎能没有一个自己的博客呢？幸运的是，因为公司要求写一篇Markdown语法的博客，就想着索性自己搭一个博客吧。so，利用这两天的时间，在网上看了很多的教程，又在自己的不断摸索下，终于尝试成功了，搭建了一个github +">
+<meta name="description" content="如何将docker镜像部署到AWS上并运行
+workflow
+1.利用sinatra启动本地的web server提供web服务
+2.安装docker服务
+3.将sinatra提供的websever安装到docker中
+4.本地设置端口映射调试
+5.注册AWS，部署docker镜像并运行
+
+step1 利用sinatra启动本地的webserver提供web服务
+
+sinatra 的官网为：htt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搭建个人博客（一）">
-<meta property="og:url" content="http://yoursite.com/2016/08/18/how-to-create-blog-1/index.html">
+<meta property="og:title" content="将docker镜像部署到AWS并运行">
+<meta property="og:url" content="http://yoursite.com/2016/11/17/docker-aws/index.html">
 <meta property="og:site_name" content="Alvin-Blog">
-<meta property="og:description" content="搭建个人博客（一）
-前言
-作为一个程序员，平时有一些好的想法，或者笔记想要记录；虽然有很多不错的网站，比如博客园，CSDN······· 但作为一个支持开源的用户，和一个技术控，怎能没有一个自己的博客呢？幸运的是，因为公司要求写一篇Markdown语法的博客，就想着索性自己搭一个博客吧。so，利用这两天的时间，在网上看了很多的教程，又在自己的不断摸索下，终于尝试成功了，搭建了一个github +">
-<meta property="og:image" content="http://obqvt6b56.bkt.clouddn.com/blog-githubPages.jpg">
-<meta property="og:image" content="http://obqvt6b56.bkt.clouddn.com/hexo.png">
-<meta property="og:image" content="http://obqvt6b56.bkt.clouddn.com/blog-github-person.png">
-<meta property="og:image" content="http://obqvt6b56.bkt.clouddn.com/blog-github-new.png">
-<meta property="og:updated_time" content="2016-08-19T09:40:41.000Z">
+<meta property="og:description" content="如何将docker镜像部署到AWS上并运行
+workflow
+1.利用sinatra启动本地的web server提供web服务
+2.安装docker服务
+3.将sinatra提供的websever安装到docker中
+4.本地设置端口映射调试
+5.注册AWS，部署docker镜像并运行
+
+step1 利用sinatra启动本地的webserver提供web服务
+
+sinatra 的官网为：htt">
+<meta property="og:updated_time" content="2016-11-17T08:50:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="搭建个人博客（一）">
-<meta name="twitter:description" content="搭建个人博客（一）
-前言
-作为一个程序员，平时有一些好的想法，或者笔记想要记录；虽然有很多不错的网站，比如博客园，CSDN······· 但作为一个支持开源的用户，和一个技术控，怎能没有一个自己的博客呢？幸运的是，因为公司要求写一篇Markdown语法的博客，就想着索性自己搭一个博客吧。so，利用这两天的时间，在网上看了很多的教程，又在自己的不断摸索下，终于尝试成功了，搭建了一个github +">
-<meta name="twitter:image" content="http://obqvt6b56.bkt.clouddn.com/blog-githubPages.jpg">
+<meta name="twitter:title" content="将docker镜像部署到AWS并运行">
+<meta name="twitter:description" content="如何将docker镜像部署到AWS上并运行
+workflow
+1.利用sinatra启动本地的web server提供web服务
+2.安装docker服务
+3.将sinatra提供的websever安装到docker中
+4.本地设置端口映射调试
+5.注册AWS，部署docker镜像并运行
+
+step1 利用sinatra启动本地的webserver提供web服务
+
+sinatra 的官网为：htt">
 
 
 
@@ -125,9 +144,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/08/18/how-to-create-blog-1/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/11/17/docker-aws/"/>
 
-  <title> 搭建个人博客（一） | Alvin-Blog </title>
+  <title> 将docker镜像部署到AWS并运行 | Alvin-Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -300,7 +319,7 @@
             
             
               
-                搭建个人博客（一）
+                将docker镜像部署到AWS并运行
               
             
           </h1>
@@ -312,8 +331,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-18T23:33:02+08:00" content="2016-08-18">
-              2016-08-18
+            <time itemprop="dateCreated" datetime="2016-11-17T14:16:01+08:00" content="2016-11-17">
+              2016-11-17
             </time>
           </span>
 
@@ -323,8 +342,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/18/how-to-create-blog-1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/18/how-to-create-blog-1/" itemprop="commentsCount"></span>
+                <a href="/2016/11/17/docker-aws/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/17/docker-aws/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -352,120 +371,88 @@
       
 
       
-        <h1>搭建个人博客（一）</h1>
-<p><strong>前言</strong></p>
-<p>作为一个程序员，平时有一些好的想法，或者笔记想要记录；虽然有很多不错的网站，比如博客园，CSDN······· 但作为一个支持开源的用户，和一个技术控，怎能没有一个自己的博客呢？幸运的是，因为公司要求写一篇Markdown语法的博客，就想着索性自己搭一个博客吧。so，利用这两天的时间，在网上看了很多的教程，又在自己的不断摸索下，终于尝试成功了，搭建了一个github + hexo + 自己域名 + Next 主题 的一个博客</p>
-<p>地址：</p>
-<blockquote>
-<p>Alvin-blog <a href="http://sialvsic.com" target="_blank" rel="external">http://sialvsic.com</a></p>
-</blockquote>
-<p><strong>感想</strong></p>
-<p>想想发现，确实有很多的博客写的不错，但是因为时间的缘故，技术的更新和网址的变更带来很多的问题，而且博文的水平参差不齐，我看的第一篇文章就是带有错误的文章，很可能一个小小的命令的错误就会带给读者很大的困惑，感觉博主也应该对此负责，时常的更新或者有一些提醒；综上，想分享一下我的过程，希望能够给读者带来一些帮助。</p>
-<p><strong>声明</strong></p>
-<p>本文适合</p>
-<ul>
-<li>linux和mac的用户，对windows的用户有一定的参考价值</li>
-<li>有一定基础的人员参考，对于0基础人员权当是学习一下</li>
-</ul>
-<p><strong>前提</strong></p>
-<ul>
-<li>git</li>
-<li>github 特别是gh-pages</li>
-<li>markdown</li>
-</ul>
-<p><strong>START</strong></p>
-<p>我会分阶段逐步完成整个过程，希望大家可以边看边完成</p>
-<p><strong>ToDoList</strong></p>
-<ul>
-<li><strong>安装npm</strong></li>
-<li><strong>利用hexo搭建本地博客</strong></li>
-<li><strong>在GitHub上发布博客</strong></li>
-<li><strong>购买域名</strong></li>
-<li><strong>用自己的域名关联博客</strong></li>
-<li><strong>优化hexo博客</strong></li>
-</ul>
+        <h1>如何将docker镜像部署到AWS上并运行</h1>
+<p><code>workflow</code></p>
+<p>1.利用sinatra启动本地的web server提供web服务</p>
+<p>2.安装docker服务</p>
+<p>3.将sinatra提供的websever安装到docker中</p>
+<p>4.本地设置端口映射调试</p>
+<p>5.注册AWS，部署docker镜像并运行</p>
 <hr>
-<h2>知识简介</h2>
-<h3>GitHub简介</h3>
+<h2>step1 利用sinatra启动本地的webserver提供web服务</h2>
 <blockquote>
-<p><strong>GitHub</strong> is a Web-based Git repository hosting service。    —— <a href="https://github.com/" target="_blank" rel="external">GitHub</a></p>
+<p>sinatra 的官网为：http://www.sinatrarb.com/</p>
 </blockquote>
-<p>即：GitHub就是一个基于Web的托管服务，当然GitHub的功能不单单有这些。</p>
-<h3>GitHub Pages 简介</h3>
 <blockquote>
-<p><strong>GitHub Pages</strong> 本用于介绍托管在 GitHub 的项目， 不过，由于他的空间免费稳定，用来做搭建一个博客再好不过了。    — <a href="https://pages.github.com/" target="_blank" rel="external">GitHub Pages</a></p>
+<p>sinatra 的github网址为：https://github.com/sinatra/sinatra</p>
 </blockquote>
-<p>GitHub Pages可以被认为是用户编写的、托管在github上的静态网页。</p>
-<p><img src="http://obqvt6b56.bkt.clouddn.com/blog-githubPages.jpg" alt="Alt text"></p>
-<h3>Hexo简介</h3>
+<p>文档很详细，启动一个web 的服务只需要：</p>
+<p>新建一个ruby的文件，命名为myapp.rb，代码如下
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># myapp.rb</div><div class="line">require &apos;sinatra&apos;</div><div class="line"></div><div class="line">get &apos;/&apos; do</div><div class="line">  &apos;Hello world!&apos;</div><div class="line">end</div></pre></td></tr></table></figure></p>
+<p>Install the gem:
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem install sinatra</div></pre></td></tr></table></figure></p>
+<p>And run with:
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ruby myapp.rb</div></pre></td></tr></table></figure></p>
+<p>View at: http://localhost:4567 (默认的端口，可以更改)即可，会看到页面上出现<code>Hello world!</code></p>
+<p>Note: sinatra会提供路由的处理，本例只是一个最最简单的get方法的路由访问；
+如果没有ruby和gem的命令，请参见google先安装ruby；</p>
+<h2>step2 安装docker</h2>
+<p>本机使用osx系统，所以打开docker官网 https://docs.docker.com/docker-for-mac/  直接下载dmg文件安装即可，安装详情请参考此文档 https://docs.docker.com/docker-for-mac/#/step-1-install-and-run-docker-for-mac</p>
+<h2>step3 将sinatra提供的websever安装到docker中</h2>
+<p>思路：如何实现这步，首先我们需要建立一个Dockerfile，用于将执行的命令写入；之后需要新建一个docker image即可.</p>
+<p>a.新建一个Dockerfile文件
+内容如下：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"># This is a comment</div><div class="line">FROM ubuntu:14.04</div><div class="line">MAINTAINER sialvsic &lt;sialvsic@outlook.com&gt;</div><div class="line">RUN mkdir /run-docker</div><div class="line">WORKDIR /run-docker</div><div class="line">RUN apt-get update &amp;&amp; apt-get install -y ruby</div><div class="line">RUN gem install bundler</div><div class="line">COPY main.rb main.rb</div><div class="line">COPY Gemfile Gemfile</div><div class="line">COPY config.ru config.ru</div><div class="line">RUN bundle install</div><div class="line">EXPOSE 8081</div><div class="line">CMD rackup --host 0.0.0.0 -p 8081</div><div class="line"># CMD [&quot;bundle&quot;, &quot;exec&quot;, &quot;rackup&quot;, &quot;--host&quot;, &quot;0.0.0.0&quot;, &quot;-p&quot;, &quot;8081&quot;]</div></pre></td></tr></table></figure></p>
 <blockquote>
-<p>快速、简洁且高效的博客框架    —— <a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a></p>
+<p><code>#</code> 注释</p>
 </blockquote>
-<p><img src="http://obqvt6b56.bkt.clouddn.com/hexo.png" alt="Alt text"></p>
-<h2>安装必备软件</h2>
-<p>可以参考 <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">https://hexo.io/zh-cn/docs/</a> 安装下列两个软件</p>
-<h3>1.安装Npm</h3>
 <blockquote>
-<p>npm — a package manager for javascript：node 的包管理器</p>
+<p>EXPOSE 表示显示的声明要导出的端口号</p>
 </blockquote>
-<p>github:  https://github.com/npm/npm</p>
-<p>官网：https://www.npmjs.com/</p>
-<p>对于Linux和Mac 的用户直接点开上面的github的地址，执行<code>Fancy Install (Unix)</code>中的命令即可</p>
-<p>实质上安装完node.js后会带有npm，所以可以按照官网的方式安装node.js即可</p>
-<h3>2.安装<a href="http://git-scm.com/" target="_blank" rel="external">Git</a></h3>
-<p>建议使用包管理器来安装
-Linux:<br>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install git</div></pre></td></tr></table></figure></p>
-<p>Mac：
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install git</div></pre></td></tr></table></figure></p>
-<h2>利用hexo搭建本地博客</h2>
-<h3>安装hexo</h3>
-<p>安装hexo
-所有必备的软件安装完成后，即可使用 npm 安装 Hexo
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
-<h3>本地初始化博客</h3>
-<p>1.安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo init &lt;folder&gt;</div><div class="line">$ <span class="built_in">cd</span> &lt;folder&gt;</div><div class="line">$ npm install</div></pre></td></tr></table></figure></p>
-<p>2.初始化完成后，运行如下命令自动生成hexo 博客相关的文件</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div></pre></td></tr></table></figure></p>
-<p>3.运行如下命令，打开本地的服务器</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo s</div></pre></td></tr></table></figure></p>
-<p>4.在浏览器中打开localhost:4000，既可看到hexo运行的结果，本地的博客也就搭建完成了</p>
-<h3>如何写博客</h3>
-<p>使用hexo 写一篇博客是非常简单的，输入以下命令</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new &lt;title&gt;    // hexo new firstarticle</div></pre></td></tr></table></figure></p>
-<p>即可看到在<code>source/_posts</code> 文件夹下生成一个<code>&lt;title&gt;</code>命名的md（markdown）文件，用自己的喜欢的编辑器打开这个文件就可以书写博客了</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">INFO  Created: ~/xxxx/source/_posts/firstarticle.md</div></pre></td></tr></table></figure></p>
-<h3>发布博客</h3>
-<p>书写完成后，运行
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g</div></pre></td></tr></table></figure></p>
-<p>自动生成博客文件，之后运行</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo s</div></pre></td></tr></table></figure></p>
-<p>可以在localhost:4000看到自己写的博文</p>
-<h2>在github上发布博客</h2>
-<h3>建立个人的GitHub的仓库</h3>
-<p>1.github注册帐号</p>
-<p>2.新建库 可以看到有个<code>绿色</code>的New按钮</p>
-<p><img src="http://obqvt6b56.bkt.clouddn.com/blog-github-person.png" alt="Alt text"></p>
-<p>点击进入后，在此处填入的库名个是为:  账户名.github.io
-比如：我的账户名为sialvsic，那么此处填入的库名为 <code>sialvsic.github.io</code></p>
-<p><img src="http://obqvt6b56.bkt.clouddn.com/blog-github-new.png" alt="Alt text"></p>
-<p>点击create repository后，即可在github上生成一个git库</p>
-<p><em>note</em> ：利用<strong>账户.github.io</strong> 这种方式搭建博客，每个github账户只能创建一个。</p>
-<h3>发布到GitHub上</h3>
-<p>1.配置xx文件</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line"><span class="built_in">type</span>: git</div><div class="line">repo: &lt;repository url&gt;</div><div class="line">branch: [branch]</div><div class="line">message: [message]</div></pre></td></tr></table></figure></p>
-<p>2.此时执行hexo deploy的命令(注意命令行中的行为)，即可将自己刚刚生成的博客发布到github上，可以登录以下url查看</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://账户名.github.io       eg:http://sialvsic.github.io</div></pre></td></tr></table></figure></p>
-<p><em>note:</em> 可能deploy之后不会立即看到结果，需要等待10分钟左右。</p>
-<p>当然到现在为止，一个免费的博客已经建立了，但唯一的问题就是以这个以下网址访问显得过low，身为博主，当然得有自己的域名，so 下一篇开始详述设置自己的域名</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://xxxx.github.io</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>CMD 表示build时不运行，但是在容器执行时运行的命令</p>
+</blockquote>
+<p>新建好Dockerfile之后，执行命令
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker build -t star:1.0 .</div></pre></td></tr></table></figure></p>
+<p>-t 表示；</p>
+<p>. 表示当前路径；</p>
+<p>执行docker images 命令会看到存在一个REPOSITORY 为star TAG为1.0的一条新的镜像，此时镜像已经build成功</p>
+<h2>step4 设置本地端口映射</h2>
+<p>我们清楚，docker 是运行在一个虚拟机中的，本质上也是一个小型的精简的linux系统，所以docker的镜像运行时只会在linux系统中打开一个8081端口，但是在当前的osx的系统中是没有办法访问的，所以需要配置端口映射，如何配置：仅需要在docker的镜像运行时指定-p参数，eg:
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run -d -p 7080:8081 star:1.0</div></pre></td></tr></table></figure></p>
+<p>-d表示后台运行，7080代表hostport,8081代表docker内部的port号，
+此时打开浏览器输入： localhost:7080 即可访问</p>
+<h2>step5 注册AWS，部署docker镜像并运行</h2>
+<p>注册很简单，唯一注意的就是需要绑定信用卡</p>
+<p>如何部署，Follow以下文档
+https://aws.amazon.com/cn/getting-started/tutorials/deploy-docker-containers/</p>
+<h2>常见技巧</h2>
+<h3>删除所有的docker containers</h3>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker rm $(docker ps -a -q)</div></pre></td></tr></table></figure></p>
+<h3>删除所有的docker images</h3>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker rmi $(docker images -q)</div></pre></td></tr></table></figure></p>
 <h2>常见问题</h2>
-<p>1.一开始以为要像平时使用github，要将所有的文件要放在 github 的库中</p>
-<p><strong>对于sialvsic.github.io/库名</strong> 此类项目
-文件的内容push到gh-pages分支，要呈现的页面以index.html为开始页面，github的会自动识别</p>
-<p><strong>对于sialvsic.github.io</strong> 这种，github官方的文档说内容要push在master分支中，我最初不清楚<strong>hexo的工作原理</strong>，将整个hexo的文件夹push到sialvsic.github.io库中的master分支上，但是发现并不起作用，最后我才明白，原来根本不需要自己push到库中，在执行hexo deploy命令时，hexo会自动生成的html + css这些东西push到库中，而这个映射关系就是自己在_config.yml文件中写的这个配置</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">deploy：</div><div class="line"><span class="built_in">type</span>：</div><div class="line">repo：&lt;repository url&gt;</div><div class="line">branch：[branch]</div><div class="line">message：[message]</div></pre></td></tr></table></figure></p>
+<h3>无法删除镜像</h3>
+<p>场景：使用docker rmi 命令时出现以下提示
+Error response from daemon: Conflict, cannot delete 91c95931e552 because the container 76068d66b290 is using it, use -f to force FATA[0000] Error: failed to remove one or more images</p>
+<p>分析：因为镜像正在运行或者镜像间存在依赖</p>
+<p>解决：加上-f 参数强制删除</p>
+<h3>Don't run Bundler···</h3>
+<p>场景: docker build 时出现以下的提示
+Don't run Bundler as root. Bundler can ask for sudo if it is needed, and
+installing your bundle as root will break this application for all non-root
+users on this machine.</p>
+<p>分析：是一个错误警告，但不是一个错误，暂时还没有解决</p>
+<p>解决：</p>
+<h3>Could not locate Gemfile or .bundle/ directory</h3>
+<p>场景：运行docker build报错</p>
+<p>分析：在书写Dockerfile的过程中，需要考虑到自己写的文件的位置，牵扯到运行问题。docker 提供COPY和ADD可以用于拷贝文件到docker虚拟机，但是存在docker的运行解析问题，可能会找不到文件</p>
+<p>解决：使用 WORKDIR处理好</p>
+<h3>已经配置好了端口映射但是本地仍然无法访问</h3>
+<p>场景：已经建立好了镜像，在运行镜像时尝试执行了以下命令均无效果
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">docker run -d -p localhost:7080:8081 star:1.0</div><div class="line">docker run -d -p 7080:8081 star:1.0</div><div class="line">docker run -d -p 127.0.0.1:7080:8081 star:1.0</div></pre></td></tr></table></figure></p>
+<p>分析：看了文档觉得这些都是对的，一开始就很奇怪这样子为什么不对，早上无意间看了一下别人的问题试了一下解决了，但是还不是很清楚为什么加了这个参数就可以了。</p>
+<p>解决：在Dockerfile的web运行时加入参数 --host 0.0.0.0</p>
 
       
     </div>
@@ -488,7 +475,9 @@ Linux:<br>
       
         <div class="post-tags">
           
-            <a href="/tags/Blog/" rel="tag">#Blog</a>
+            <a href="/tags/docker/" rel="tag">#docker</a>
+          
+            <a href="/tags/AWS/" rel="tag">#AWS</a>
           
         </div>
       
@@ -497,17 +486,13 @@ Linux:<br>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/11/27/communication-and-some-idea/" rel="next" title="Communication and some idea">
-                <i class="fa fa-chevron-left"></i> Communication and some idea
+              <a href="/2016/08/28/mysql/" rel="next" title="Mysql install uninstall and simple use">
+                <i class="fa fa-chevron-left"></i> Mysql install uninstall and simple use
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/23/java-basic/" rel="prev" title="java 基础">
-                java 基础 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -522,10 +507,10 @@ Linux:<br>
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/08/18/how-to-create-blog-1/"
-     data-title="搭建个人博客（一）"
+        <div class="ds-share flat" data-thread-key="2016/11/17/docker-aws/"
+     data-title="将docker镜像部署到AWS并运行"
      data-content=""
-     data-url="http://yoursite.com/2016/08/18/how-to-create-blog-1/">
+     data-url="http://yoursite.com/2016/11/17/docker-aws/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -552,8 +537,8 @@ Linux:<br>
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/08/18/how-to-create-blog-1/"
-           data-title="搭建个人博客（一）" data-url="http://yoursite.com/2016/08/18/how-to-create-blog-1/">
+      <div class="ds-thread" data-thread-key="2016/11/17/docker-aws/"
+           data-title="将docker镜像部署到AWS并运行" data-url="http://yoursite.com/2016/11/17/docker-aws/">
       </div>
     
   </div>
@@ -655,7 +640,7 @@ Linux:<br>
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">搭建个人博客（一）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">知识简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.1.</span> <span class="nav-text">GitHub简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.2.</span> <span class="nav-text">GitHub Pages 简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.3.</span> <span class="nav-text">Hexo简介</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text">安装必备软件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.安装Npm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.安装Git</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.</span> <span class="nav-text">利用hexo搭建本地博客</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.1.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.2.</span> <span class="nav-text">本地初始化博客</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.3.</span> <span class="nav-text">如何写博客</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.4.</span> <span class="nav-text">发布博客</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.</span> <span class="nav-text">在github上发布博客</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.1.</span> <span class="nav-text">建立个人的GitHub的仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.2.</span> <span class="nav-text">发布到GitHub上</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.5.</span> <span class="nav-text">常见问题</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">如何将docker镜像部署到AWS上并运行</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">step1 利用sinatra启动本地的webserver提供web服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text">step2 安装docker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.</span> <span class="nav-text">step3 将sinatra提供的websever安装到docker中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.</span> <span class="nav-text">step4 设置本地端口映射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.5.</span> <span class="nav-text">step5 注册AWS，部署docker镜像并运行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.6.</span> <span class="nav-text">常见技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.6.1.</span> <span class="nav-text">删除所有的docker containers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.6.2.</span> <span class="nav-text">删除所有的docker images</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.7.</span> <span class="nav-text">常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.7.1.</span> <span class="nav-text">无法删除镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.7.2.</span> <span class="nav-text">Don't run Bundler···</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.7.3.</span> <span class="nav-text">Could not locate Gemfile or .bundle/ directory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.7.4.</span> <span class="nav-text">已经配置好了端口映射但是本地仍然无法访问</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>

@@ -4,6 +4,203 @@
   
     
     <entry>
+      <title><![CDATA[webpack]]></title>
+      <url>http://yoursite.com/2016/12/21/webpack/</url>
+      <content type="html"><![CDATA[<h1>Webpack</h1>
+<hr>
+<h2>webpack</h2>
+<p>webpack 是一款模块打包的工具，它将根据模块的依赖关系进行<code>静态分析</code>，然后将这些模块按照指定的规则生成对应的静态资源。</p>
+<p>webpack 是加强版的browserify，webpack解决的是<code>大型单页应用</code>的打包问题，同时解决了这些资源的依赖</p>
+<p>webpack 将项目中的所有资源，js，png，.css，等等所有的东西可以视为模块</p>
+<p>如下图所示，经过webpack 的处理成为静态的资源文件</p>
+<p><img src="http://obqvt6b56.bkt.clouddn.com/blog-webpack-what-is-webpack.png" alt="Alt text"></p>
+<p>总结：</p>
+<blockquote>
+<p>Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。还可以将按需加载的模块进行代码分隔，等到实际需要的时候再异步加载。通过 loader 的转换，任何形式的资源都可以视作<code>模块</code>，比如 CommonJs 模块、 AMD 模块、 ES6 模块、CSS、图片、 JSON、Coffeescript、 LESS 等</p>
+</blockquote>
+<p>对多种模块方案的支持与视一切资源为可管理模块的思路让他天然的适合React项目的开发，成为React官方退推荐的打包工具</p>
+<h2>webpack 特点</h2>
+<h3>code splitting （代码拆分）</h3>
+<p>code splitting 也就是entry point ，webpack会自动的完成.</p>
+<p>对于较大规模的web应用 （特别是单页应用），把所有代码合并到单个文件是比较低下的做法，单个文件体积过大导致应用初始加载缓慢。尤其如果其中很多逻辑只在特定情况下需要执行，每次都完整的加载所有的模块就变得浪费。webpack提供了代码拆分的方案，可将应用代码拆分为多个块（chunk），每个块包含一个或多个模块，块可以按需被异步加载。
+webpack 的依赖树中有同步和异步两种依赖方式。其中，异步模块将会被拆成一个新的块，并且在被优化后，生成一个对应的文件。</p>
+<h3>loader（加载器）</h3>
+<p>loader可以处理各种类型的静态文件，并且支持串联操作。webpack 本身只支持处理 JavaScript，但可以通过加载器来把别的资源转为 JavaScript。因此，每个资源都被当作一个模块。</p>
+<p>使用loader时注意用多个loaders用<code>!</code>隔开即可，每个部分的loader的解析都相对于当前路径</p>
+<h3>plugins（插件）</h3>
+<p>Webpack 还有一个功能丰富的插件系统。大多数内容功能都是基于这个插件系统运行的，还可以开发和使用开源的 Webpack 插件，来满足各式各样的需求</p>
+<h3>智能解析</h3>
+<p>Webpack 有一个智能解析器，几乎可以处理任何第三方库，无论它们的模块形式是 CommonJS、 AMD 还是普通的 JS 文件。甚至在加载依赖的时候，允许使用动态表达式 require(&quot;./templates/&quot; + name + &quot;.jade&quot;)</p>
+<h3>快速运行</h3>
+<p>Webpack 使用异步 I/O 和多级缓存提高运行效率，这使得 Webpack 能够以令人难以置信的速度快速增量编译。</p>
+<h2>使用</h2>
+<p>有两种方式使用webpack：</p>
+<ul>
+<li>一种是使用命令行的方式 （在项目中不推荐使用，本文不介绍）</li>
+<li>另一种写一个名为 webpack.config.js 的文件</li>
+</ul>
+<h3>简单的配置</h3>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">    entry: &apos;./app.jsx&apos;,</div><div class="line">    output: &#123;</div><div class="line">        path: &apos;./&apos;,</div><div class="line">        filename: &apos;app.js&apos;</div><div class="line">    &#125;,</div><div class="line">    module: &#123;</div><div class="line">        loaders: [&#123;</div><div class="line">            test: /\.jsx$/,</div><div class="line">            loader: &apos;jsx-loader&apos;</div><div class="line">        &#125;]</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2>属性解释</h2>
+<h3>entry</h3>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">entry: &#123;</div><div class="line">        page1: &quot;./page1&quot;,</div><div class="line">        //支持数组形式，将加载数组中的所有模块</div><div class="line">        page2: [&quot;./entry1&quot;, &quot;./entry2&quot;]</div><div class="line">    &#125;,</div></pre></td></tr></table></figure></p>
+<p>entry：指定打包的入口文件，每有一个键值对，就是一个入口文件
+如果不在这里指定，而且又不在项目代码的引用链中，那么webpack不会加载。</p>
+<h3>output</h3>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">output: &#123;</div><div class="line">		path: __dirname,</div><div class="line">		filename: &apos;[name].js&apos;</div><div class="line">	&#125;,</div></pre></td></tr></table></figure></p>
+<p>output：配置打包结果，path定义了输出的文件夹，filename则定义了打包结果文件的名称，filename里面的 [name] 会由entry中的键值替换</p>
+<p>其中有一个最重要的但容易被忽略的配置是publicPath，它表示构建结果最终被真正访问的路径</p>
+<h4>PublicPath</h4>
+<h3>resolve</h3>
+<p>定义了解析模块路径时的配置</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">resolve: &#123;</div><div class="line">        root： &apos;~/workspace/index.js&apos;  //绝对路径</div><div class="line">		</div><div class="line">		// 现在你require文件的时候可以直接使用require(&apos;file&apos;)，不用使用require(&apos;file.js&apos;)</div><div class="line">		extensions: [&apos;&apos;, &apos;.js&apos;, &apos;.jsx&apos;] </div><div class="line">	&#125;,</div></pre></td></tr></table></figure></p>
+<ul>
+<li>root 绝对路径，从此路径开始加载</li>
+<li>extensions 用来指定模块的后缀，这样在引入模块时就不需要写后缀了，会自动补全</li>
+</ul>
+<h3>module</h3>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">module: &#123;</div><div class="line">		loaders: [&#123;</div><div class="line">			test: /\.js$/,</div><div class="line">			loader: &apos;babel-loader&apos;</div><div class="line">		&#125;, &#123;</div><div class="line">			test: /\.jsx$/,</div><div class="line">			loader: &apos;babel-loader!jsx-loader?harmony&apos;</div><div class="line">		&#125;]</div><div class="line">	&#125;,</div></pre></td></tr></table></figure></p>
+<p>定义了对模块的处理逻辑，这里可以用loaders定义了一系列的加载器，以及一些正则。当需要加载的文件匹配test的正则时，就会调用后面的loader对文件进行处理，这正是webpack强大的原因</p>
+<p>注意：
+&quot;-loader&quot;其实是可以省略不写的，多个loader之间用“!”连接起来</p>
+<h4>css处理</h4>
+<h4>less处理</h4>
+<h4>sass处理</h4>
+<h4>图片处理</h4>
+<p>图片的处理需要安装url-loader.   limit= xx 的意思是当图片文件小于xx时，转换为base64的格式。同时指定生成到<code>/images/</code>的目录下</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    test: /\.(png|jpg)$/,</div><div class="line">    exclude: /node_modules/,</div><div class="line">    loader: &apos;url-loader?limit=8192&amp;name=/images/[name].[ext]&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4>字体处理</h4>
+<h3>plugins</h3>
+<p>这里定义了需要使用的插件</p>
+<p>常用的组件：</p>
+<ul>
+<li>commonsPlugin在打包多个入口文件时会提取出公用的部分，生成common.js 【eg1】</li>
+<li><a href="https://github.com/gaearon/react-hot-loader" target="_blank" rel="external">react-hot-loader</a></li>
+<li><a href="https://github.com/webpack/extract-text-webpack-plugin" target="_blank" rel="external">extract-text-webpack-plugin</a>  webpack 执行后会把样式文件单独提取出来，不打包到脚本中，作为单独的css文件 【eg2】</li>
+<li>webpack.optimize.DedupePlugin      // 这个插件搜索相似的块与文件并合并它们     【使用时出错】</li>
+<li>webpack.optimize.OccurenceOrderPlugin    // 这个插件通过计算子块和模块的使用次数进行优化   【使用时出错】</li>
+<li><a href="https://github.com/michael-ciniawsky/postcss-load-config" target="_blank" rel="external">Htmlwbpackplugin</a> //可以自动生成html文件</li>
+</ul>
+<p>eg1：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">var webpack = require(&apos;webpack&apos;);</div><div class="line">var commonsPlugin = new webpack.optimize.CommonsChunkPlugin(&apos;common.js&apos;);</div><div class="line"></div><div class="line">module.exports = &#123;</div><div class="line">	plugins: [commonsPlugin]</div><div class="line">&#125;</div><div class="line"></div><div class="line">或者支持自定义的提取</div><div class="line">var CommonsChunkPlugin = require(&quot;webpack/lib/optimize/CommonsChunkPlugin&quot;);</div><div class="line"></div><div class="line">module.exports = &#123;</div><div class="line">    entry: &#123;</div><div class="line">        p1: &quot;./page1&quot;,</div><div class="line">        p2: &quot;./page2&quot;,</div><div class="line">        p3: &quot;./page3&quot;,</div><div class="line">        ap1: &quot;./admin/page1&quot;,</div><div class="line">        ap2: &quot;./admin/page2&quot;</div><div class="line">    &#125;,</div><div class="line">    output: &#123;</div><div class="line">        filename: &quot;[name].js&quot;</div><div class="line">    &#125;,</div><div class="line">    plugins: [</div><div class="line">        new CommonsChunkPlugin(&quot;admin-commons.js&quot;, [&quot;ap1&quot;, &quot;ap2&quot;]),</div><div class="line">        new CommonsChunkPlugin(&quot;commons.js&quot;, [&quot;p1&quot;, &quot;p2&quot;, &quot;admin-commons.js&quot;])</div><div class="line">    ]</div><div class="line">&#125;;</div><div class="line">// &lt;script&gt;s required:</div><div class="line">// page1.html: commons.js, p1.js</div><div class="line">// page2.html: commons.js, p2.js</div><div class="line">// page3.html: p3.js</div><div class="line">// admin-page1.html: commons.js, admin-commons.js, ap1.js</div><div class="line">// admin-page2.html: commons.js, admin-commons.js, ap2.js</div></pre></td></tr></table></figure></p>
+<p>eg2:
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var ExtractTextPlugin = require(&quot;extract-text-webpack-plugin&quot;);</div><div class="line">module.exports = &#123;</div><div class="line">        plugins: [new ExtractTextPlugin(&quot;[name].css&quot;)],</div><div class="line">      &#125;</div></pre></td></tr></table></figure></p>
+<p>eg3:</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">        plugins: [</div><div class="line">        // 这个插件搜索相似的块与文件并合并它们</div><div class="line">        new webpack.optimize.DedupePlugin(),</div><div class="line">        </div><div class="line">        // 这个插件通过计算子块和模块的使用次数进行优化</div><div class="line">        new webpack.optimize.OccurenceOrderPlugin()</div><div class="line">        ],</div><div class="line">      &#125;</div></pre></td></tr></table></figure></p>
+<h2>webpack 运行参数</h2>
+<h3>webpack</h3>
+<ul>
+<li>webapck 执行一次开发的变异</li>
+</ul>
+<h3>webpack-dev-server</h3>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ webpack-dev-server --display-error-details --history-api-fallback --hot --inline --progress --colors --port 4000 --host 0.0.0.0</div></pre></td></tr></table></figure></p>
+<ul>
+<li>--display-error-details 推荐加上的，方便出错时能查阅更详尽的信息</li>
+<li>--progress 带有进度</li>
+<li>--colors 带有颜色</li>
+<li>--profile 输出性能数据，可以看到每一步的耗时</li>
+<li>--display-modules 默认情况下 node_modules 下的模块会被隐藏，加上这个参数可以显示这些被隐藏的模块</li>
+</ul>
+<h2>设置缓存</h2>
+<p>对于静态文件，第一次获取之后，文件内容没改变的话，浏览器直接读取缓存文件即可。那如果缓存设置过长，文件要更新怎么办呢？嗯，以文件内容的 MD5 作为文件名就是一个不错的解决方案。</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">output: &#123;</div><div class="line">   path: __dirname + &apos;/build&apos;,</div><div class="line">   filename: &apos;[bundle]-[chunkhash:6].js&apos;</div><div class="line"> &#125;,</div></pre></td></tr></table></figure></p>
+<p>output:
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[bundle]-6519c9.js</div></pre></td></tr></table></figure></p>
+<h2>搭建脚手架需要解决的问题</h2>
+<ul>
+<li>ES6支持</li>
+<li>React JSX支持</li>
+<li>css/scss/less支持</li>
+<li>第三方例如jquery和fontawesome的支持</li>
+<li>webpack-dev-server</li>
+<li>热替换</li>
+<li>自动刷新</li>
+<li>局部自动刷新</li>
+</ul>
+<h2>功能标识</h2>
+<p>项目中有些代码我们只为在开发环境（例如日志）或者是内部测试环境（例如那些没有发布的新功能）中使用，那就需要引入下面这些魔法全局变量（magic globals）：</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">if (__DEV__) &#123;</div><div class="line">  console.warn(&apos;Extra logging&apos;);</div><div class="line">&#125;</div><div class="line">// ...</div><div class="line">if (__PRERELEASE__) &#123;</div><div class="line">  showSecretFeature();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>同时还要在webpack.config.js中配置这些变量，使得webpack能够识别他们。
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">// webpack.config.js</div><div class="line"></div><div class="line">// definePlugin 会把定义的string 变量插入到Js代码中。</div><div class="line">var definePlugin = new webpack.DefinePlugin(&#123;</div><div class="line">  __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || &apos;true&apos;)),</div><div class="line">  __PRERELEASE__: JSON.stringify(JSON.parse(process.env.BUILD_PRERELEASE || &apos;false&apos;))</div><div class="line">&#125;);</div><div class="line"></div><div class="line">module.exports = &#123;</div><div class="line">  entry: &apos;./main.js&apos;,</div><div class="line">  output: &#123;</div><div class="line">    filename: &apos;bundle.js&apos;</div><div class="line">  &#125;,</div><div class="line">  plugins: [definePlugin]</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>配置完成后，就可以使用 BUILD_DEV=1 BUILD_PRERELEASE=1 webpack来打包代码了。 值得注意的是，webpack -p 会删除所有无作用代码，也就是说那些包裹在这些全局变量下的代码块都会被删除，这样就能保证这些代码不会因发布上线而泄露。</p>
+<h2>Webpack-dev-server</h2>
+<p>webpack-dev-server 是运行在<code>内存中</code>的，所以不会像执行webpack一样，编译出真实的文件</p>
+<h2>SourceMaps</h2>
+<h2>Hot Module Replacement</h2>
+<p>热模块替换改变，添加，移除模块而不需要页面的刷新
+使用<strong>webpack-dev-server</strong> 有两种方式打开HMR
+方法1：在命令行中加入 <code>--hot</code>和 <code>--inine</code>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">webpack-dev-server --hot --inline</div></pre></td></tr></table></figure></p>
+<ul>
+<li><code>--hot</code> 自动添加HotModuleReplacementPlugin插件</li>
+<li><code>--inline</code> 将webpack-dev-server运行时嵌入到bundle中</li>
+</ul>
+<p>注意：在命令行中指定<code>--hot</code>参数，这种开启方式只适合inline模式，也就是说，你必须同时结合inline模式使用：<code>webpack-dev-server --inline --hot</code>。</p>
+<p>方法2：修改webpack.config.js文件</p>
+<ul>
+<li>add new webpack.HotModuleReplacementPlugin() to the plugins field</li>
+<li>add webpack/hot/dev-server and webpack-dev-server/client?http://localhost:8080 to the entry field</li>
+</ul>
+<p>Eg：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">var webpack = require(&apos;webpack&apos;);</div><div class="line">var path = require(&apos;path&apos;);</div><div class="line"></div><div class="line">module.exports = &#123;</div><div class="line">  entry: [</div><div class="line">    &apos;webpack/hot/dev-server&apos;,</div><div class="line">    &apos;webpack-dev-server/client?http://localhost:8080&apos;,</div><div class="line">    &apos;./index.js&apos;</div><div class="line">  ],</div><div class="line">  output: &#123;</div><div class="line">    filename: &apos;bundle.js&apos;,</div><div class="line">    publicPath: &apos;/static/&apos;</div><div class="line">  &#125;,</div><div class="line">  plugins: [</div><div class="line">    new webpack.HotModuleReplacementPlugin()</div><div class="line">  ],</div><div class="line">  module: &#123;</div><div class="line">    loaders: [&#123;</div><div class="line">      test: /\.jsx?$/,</div><div class="line">      exclude: /node_modules/,</div><div class="line">      loader: &apos;babel-loader&apos;,</div><div class="line">      query: &#123;</div><div class="line">        presets: [&apos;es2015&apos;, &apos;react&apos;]</div><div class="line">      &#125;,</div><div class="line">      include: path.join(__dirname, &apos;.&apos;)</div><div class="line">    &#125;]</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<h2>自动刷新</h2>
+<p>webpack-dev-server支持两种模式的自动刷新。</p>
+<p><strong>iframe模式</strong></p>
+<p>使用iframe模式并不需要多余的配置，直接访问http://[host]:[port]/webpack-dev-server/[path]即可，iframe模式的特征如下：</p>
+<blockquote>
+<p>✦ 无需额外的配置</p>
+</blockquote>
+<blockquote>
+<p>✦ 顶部条可以显示编译信息</p>
+</blockquote>
+<blockquote>
+<p>✦ 浏览器的地址不会跟着页面URL变动</p>
+</blockquote>
+<p><strong>inline模式</strong></p>
+<p>简单配置可以开启，然后直接访问http://[host]:[port]/[path]即可，inline模式的特征如下：</p>
+<blockquote>
+<p>✦ 需要额外的配置</p>
+</blockquote>
+<blockquote>
+<p>✦ 编译信息只能在命令行和浏览器console中查看</p>
+</blockquote>
+<blockquote>
+<p>✦ 浏览器的地址和页面URL同步</p>
+</blockquote>
+<p>前文提到的简单配置到底有多简单呢？如下两种方式均可：
+➙ 在命令行中指定<code>--inline</code>参数，比如：<code>webpack-dev-server --inline</code>
+➙ 在webpack.config.js配置文件中添加devServer: {inline: true}</p>
+<h2>问题</h2>
+<h3>不能自动刷新</h3>
+<p>场景：发现一个问题就是在一个项目中的是可以自动刷新的，但是相同的代码在另一个项目中就不能自动的刷新
+分析：起初以为是代码的问题，结果尝试将两个代码的配置项改为相同的还是不行，尝试无果，在论坛上发现有人是因为在osx
+（mac）上的文件夹的名字大写导致的，所以尝试将项目的文件夹的名字更改
+解决：更改不能work的文件夹的名字为简单的英文即可，很坑。</p>
+<h3>添加第三方依赖失败</h3>
+<p>场景：尝试在webpack中添加jquery，参考了官网的写法但是一直不能work
+分析：
+解决：将webpack的config的文件中的entry中的vendor的值由 string 改为 array即可</p>
+<h2>学习资料</h2>
+<p>视频：</p>
+<p>书：</p>
+<ul>
+<li>Webpack 中文指南 http://zhaoda.net/webpack-handbook/</li>
+</ul>
+<h2>参考资料</h2>
+<p>官网：http://webpack.github.io/docs/</p>
+<p>文章：</p>
+<ul>
+<li>WebPack实例与前端性能优化：https://segmentfault.com/a/1190000004577578</li>
+<li>WEBPACK DEV SERVER：http://www.jianshu.com/p/b95bbcfc590d</li>
+<li>http://www.infoq.com/cn/articles/react-and-webpack/</li>
+<li>https://rhadow.github.io/2015/05/30/webpack-loaders-and-plugins/</li>
+</ul>
+<p>代码：
+阮一峰webpack-demo：https://github.com/ruanyf/webpack-demos</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[将docker镜像部署到AWS并运行]]></title>
       <url>http://yoursite.com/2016/11/17/docker-aws/</url>
       <content type="html"><![CDATA[<h1>如何将docker镜像部署到AWS上并运行</h1>

@@ -4,12 +4,9 @@
   
     
     <entry>
-      <title><![CDATA[webpack]]></title>
+      <title><![CDATA[Webpack]]></title>
       <url>http://yoursite.com/2016/12/21/webpack/</url>
-      <content type="html"><![CDATA[<h1>Webpack</h1>
-<hr>
-<h2>webpack</h2>
-<p>webpack 是一款模块打包的工具，它将根据模块的依赖关系进行<code>静态分析</code>，然后将这些模块按照指定的规则生成对应的静态资源。</p>
+      <content type="html"><![CDATA[<p>Webpack 是一款模块打包的工具，它将根据模块的依赖关系进行<code>静态分析</code>，然后将这些模块按照指定的规则生成对应的静态资源。</p>
 <p>webpack 是加强版的browserify，webpack解决的是<code>大型单页应用</code>的打包问题，同时解决了这些资源的依赖</p>
 <p>webpack 将项目中的所有资源，js，png，.css，等等所有的东西可以视为模块</p>
 <p>如下图所示，经过webpack 的处理成为静态的资源文件</p>
@@ -167,9 +164,11 @@ webpack 的依赖树中有同步和异步两种依赖方式。其中，异步模
 <blockquote>
 <p>✦ 浏览器的地址和页面URL同步</p>
 </blockquote>
-<p>前文提到的简单配置到底有多简单呢？如下两种方式均可：
-➙ 在命令行中指定<code>--inline</code>参数，比如：<code>webpack-dev-server --inline</code>
-➙ 在webpack.config.js配置文件中添加devServer: {inline: true}</p>
+<p>前文提到的简单配置到底有多简单呢？如下两种方式均可：</p>
+<ul>
+<li>➙ 在命令行中指定<code>--inline</code>参数，比如：<code>webpack-dev-server --inline</code></li>
+<li>➙ 在webpack.config.js配置文件中添加devServer: {inline: true}</li>
+</ul>
 <h2>问题</h2>
 <h3>不能自动刷新</h3>
 <p>场景：发现一个问题就是在一个项目中的是可以自动刷新的，但是相同的代码在另一个项目中就不能自动的刷新

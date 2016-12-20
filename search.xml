@@ -4,6 +4,71 @@
   
     
     <entry>
+      <title><![CDATA[Webpack-high-optimize]]></title>
+      <url>http://yoursite.com/2016/12/21/webpack-high-optimize/</url>
+      <content type="html"><![CDATA[<h1>webpack 高级优化</h1>
+<h3>优化</h3>
+<h4>1.如何区分开发及生产环境</h4>
+<p>在package.json里面的script设置环境变量，注意mac与windows的设置方式不一样</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&quot;scripts&quot;: &#123;</div><div class="line">    &quot;publish-mac&quot;: &quot;export NODE_ENV=prod&amp;&amp;webpack -p --progress --colors&quot;,</div><div class="line">    &quot;publish-win&quot;:  &quot;set NODE_ENV=prod&amp;&amp;webpack -p --progress --colors&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在webpack.config.js使用process.env.NODE_ENV进行判断</p>
+<p>功能标识</p>
+<p>项目中有些代码我们只为在开发环境（例如日志）或者是内部测试环境（例如那些没有发布的新功能）中使用，那就需要引入下面这些魔法全局变量（magic globals）：</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">if (__DEV__) &#123;</div><div class="line">  console.warn(&apos;Extra logging&apos;);</div><div class="line">&#125;</div><div class="line">// ...</div><div class="line">if (__PRERELEASE__) &#123;</div><div class="line">  showSecretFeature();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>同时还要在webpack.config.js中配置这些变量，使得webpack能够识别他们。</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">// webpack.config.js</div><div class="line"></div><div class="line">// definePlugin 会把定义的string 变量插入到Js代码中。</div><div class="line">var definePlugin = new webpack.DefinePlugin(&#123;</div><div class="line">  __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || &apos;true&apos;)),</div><div class="line">  __PRERELEASE__: JSON.stringify(JSON.parse(process.env.BUILD_PRERELEASE || &apos;false&apos;))</div><div class="line">&#125;);</div><div class="line"></div><div class="line">module.exports = &#123;</div><div class="line">  entry: &apos;./main.js&apos;,</div><div class="line">  output: &#123;</div><div class="line">    filename: &apos;bundle.js&apos;</div><div class="line">  &#125;,</div><div class="line">  plugins: [definePlugin]</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>配置完成后，就可以使用 BUILD_DEV=1 BUILD_PRERELEASE=1 webpack来打包代码了。 值得注意的是，webpack -p 会删除所有无作用代码，也就是说那些包裹在这些全局变量下的代码块都会被删除，这样就能保证这些代码不会因发布上线而泄露。</p>
+<h4>2.使用代码热替换</h4>
+<p>参考webpack-dev-server: https://webpack.github.io/docs/webpack-dev-server.html#hot-module-replacement</p>
+<h4>3.import react导致文件变大，编译速度变慢，乍办?</h4>
+<p>方法</p>
+<ul>
+<li>A 如果你想将react分离，不打包到一起，可以使用externals。然后用&lt;script&gt;单独将react引入</li>
+<li>B 如果不介意将react打包到一起，请在alias中直接指向react的文件。可以提高webpack搜索的速度。准备部署上线时记得将换成react.min，能减少文件大小(减少约600kb)</li>
+<li>C 使用module.noParse针对单独的react.min.js这类没有依赖的模块，速度会更快</li>
+</ul>
+<h4>4.将模块暴露到全局</h4>
+<p>如果想将report数据上报组件放到全局，有两种办法：
+方法一：
+在loader里使expose将report暴露到全局，然后就可以直接使用report进行上报</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    test: path.join(config.path.src, &apos;/js/common/report&apos;),</div><div class="line">    loader: &apos;expose?report&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>方法二：
+如果想用R直接代表report，除了要用expose loader之外，还需要用ProvidePlugin帮助，指向report，这样在代码中直接用R.tdw， R.monitor这样就可以</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">new webpack.ProvidePlugin(&#123;</div><div class="line">    &quot;R&quot;: &quot;report&quot;,</div><div class="line">&#125;),</div></pre></td></tr></table></figure></p>
+<h4>5. 合并公共代码</h4>
+<p>有些类库如utils, bootstrap之类的可能被多个页面共享，最好是可以合并成一个js，而非每个js单独去引用。这样能够节省一些空间。这时我们可以用到CommonsChunkPlugin，我们指定好生成文件的名字，以及想抽取哪些入口js文件的公共代码，webpack就会自动帮我们合并好
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">new webpack.optimize.CommonsChunkPlugin(&apos;vendor&apos;, &apos;vendor.js&apos;)</div></pre></td></tr></table></figure></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">new webpack.optimize.CommonsChunkPlugin(&#123;</div><div class="line">           name:      &apos;main&apos;, // 把依赖移动到主文件</div><div class="line">           children:  true, // 寻找所有子模块的共同依赖</div><div class="line">           minChunks: 2, // 设置一个依赖被引用超过多少次就提取出来</div><div class="line">       &#125;),</div></pre></td></tr></table></figure></p>
+<p>第一个参数是entry中的vendor的名字</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">entry: &#123;</div><div class="line">    jsx: &apos;./src/index.js&apos;,</div><div class="line">    html: &apos;./src/index.html&apos;,</div><div class="line">    vendor: [&apos;jquery&apos;]       //Array</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<h4>6.善用alias</h4>
+<p>resolve里面有一个alias的配置项目，能够让开发者指定一些模块的引用路径。对一些经常要被import或者require的库，如react,我们最好可以直接指定它们的位置，这样webpack可以省下不少搜索硬盘的时间。
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">alias: &#123;</div><div class="line">      &apos;react&apos;: path.join(&apos;node_modules&apos;,&apos;react/dist/react.min&apos;)</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<h4>7.React-hot-loader组件级热更新</h4>
+<p>虽然实现了代码的热替换，只要在编辑器中保存我们编辑的代码，浏览器即可实时刷新。但同时也有一个烦恼，如果我们的项目开发中用到了几十个组件，为了测试某个组件我们需要一步步操作到固定的步骤去实现，一旦保存编辑器中修改的一行代码，从入口文件开始的所有代码都全部刷新了一次，这样很不利于调试。</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">   test: /\.jsx|js$/,</div><div class="line">   exclude: /node_modules/,</div><div class="line">   loaders: [&apos;react-hot&apos;, &apos;babel?presets[]=react,presets[]=es2015&apos;]</div><div class="line">   //原先的配置</div><div class="line">   // loader: &apos;babel-loader&apos;,</div><div class="line">   // query: &#123;</div><div class="line">   //   presets: [&apos;react&apos;, &apos;es2015&apos;]</div><div class="line">   // &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4>8.如何压缩代码</h4>
+<p>在生产环境中我们需要将代码压缩，尽可能的减少代码的体积，所以需要在生产环境的webpack中加入以下插件
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  plugins: [</div><div class="line">    // 代码混淆压缩</div><div class="line">    new webpack.optimize.UglifyJsPlugin(&#123;</div><div class="line">      compress: &#123;</div><div class="line">        warnings: false</div><div class="line">      &#125;</div><div class="line">    &#125;)</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>加入了这个插件之后，编译的速度会明显变慢，所以一般只在生产环境启用。</p>
+<p>另外，服务器端还可以开启 gzip 压缩，优化的效果更明显。</p>
+<h4>9. 代码运行前添加eslint的检测</h4>
+<p>新建一个eslint.rc的配置文件
+安装eslint-loader</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">preLoaders: [</div><div class="line">      &#123;</div><div class="line">        test: /\.js$/,</div><div class="line">        loader: &quot;eslint-loader&quot;,</div><div class="line">        exclude: /node_modules/</div><div class="line">      &#125;</div><div class="line">],</div></pre></td></tr></table></figure></p>
+<h4>10.build前先清理build目录</h4>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install clean-webpack-plugin --save-dev</div></pre></td></tr></table></figure></p>
+<h2>参考资料</h2>
+<ul>
+<li>webpack使用优化： http://www.alloyteam.com/2016/01/webpack-use-optimization/</li>
+<li>如何十倍提升你的webpack构建效率： http://gold.xitu.io/entry/5768e6ab207703006b310f95</li>
+<li>让 Webpack 来帮你打包吧： https://gold.xitu.io/entry/5767a975df0eea0062ffe193</li>
+<li>webpackForSPA:  https://github.com/huangshuwei/webpackForSPA/blob/master/webpack.config.js</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Webpack-how-to-set-up]]></title>
       <url>http://yoursite.com/2016/12/21/webpack-how-to-set-up/</url>
       <content type="html"><![CDATA[<h1>Webpack how to setup</h1>

@@ -77,7 +77,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0" />
+  <link rel="shortcut icon" type="image/x-icon" href="/images/avatar.jpg?v=5.1.0" />
 
 
 
@@ -157,7 +157,7 @@ webpack 将项目中的所有资源，js，png，.css，等等所有的东西可
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?10aa6be99d86164c9368d5bd303c3a93";
+      hm.src = "https://hm.baidu.com/hm.js?10aa6be99d86164c9368d5bd303c3a93";
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
@@ -189,7 +189,9 @@ webpack 将项目中的所有资源，js，png，.css，等等所有的东西可
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle">过程即是最好的结局</p>
+    
+      <p class="site-subtitle">过程即是最好的结局</p>
+    
 </div>
 
 <div class="site-nav-toggle">
@@ -344,7 +346,9 @@ webpack 将项目中的所有资源，js，png，.css，等等所有的东西可
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-21T01:39:05+08:00">
                 2016-12-21
               </time>
@@ -361,6 +365,9 @@ webpack 将项目中的所有资源，js，png，.css，等等所有的东西可
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2016/12/21/webpack/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/21/webpack/" itemprop="commentCount"></span>
                 </a>
@@ -403,58 +410,58 @@ webpack 将项目中的所有资源，js，png，.css，等等所有的东西可
 <p>Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。还可以将按需加载的模块进行代码分隔，等到实际需要的时候再异步加载。通过 loader 的转换，任何形式的资源都可以视作<code>模块</code>，比如 CommonJs 模块、 AMD 模块、 ES6 模块、CSS、图片、 JSON、Coffeescript、 LESS 等</p>
 </blockquote>
 <p>对多种模块方案的支持与视一切资源为可管理模块的思路让他天然的适合React项目的开发，成为React官方退推荐的打包工具</p>
-<h2>webpack 特点</h2>
-<h3>code splitting （代码拆分）</h3>
+<h2 id="webpack-te-dian">webpack 特点</h2>
+<h3 id="code-splitting-dai-ma-chai-fen">code splitting （代码拆分）</h3>
 <p>code splitting 也就是entry point ，webpack会自动的完成.</p>
 <p>对于较大规模的web应用 （特别是单页应用），把所有代码合并到单个文件是比较低下的做法，单个文件体积过大导致应用初始加载缓慢。尤其如果其中很多逻辑只在特定情况下需要执行，每次都完整的加载所有的模块就变得浪费。webpack提供了代码拆分的方案，可将应用代码拆分为多个块（chunk），每个块包含一个或多个模块，块可以按需被异步加载。
 webpack 的依赖树中有同步和异步两种依赖方式。其中，异步模块将会被拆成一个新的块，并且在被优化后，生成一个对应的文件。</p>
-<h3>loader（加载器）</h3>
+<h3 id="loader-jia-zai-qi">loader（加载器）</h3>
 <p>loader可以处理各种类型的静态文件，并且支持串联操作。webpack 本身只支持处理 JavaScript，但可以通过加载器来把别的资源转为 JavaScript。因此，每个资源都被当作一个模块。</p>
 <p>使用loader时注意用多个loaders用<code>!</code>隔开即可，每个部分的loader的解析都相对于当前路径</p>
-<h3>plugins（插件）</h3>
+<h3 id="plugins-cha-jian">plugins（插件）</h3>
 <p>Webpack 还有一个功能丰富的插件系统。大多数内容功能都是基于这个插件系统运行的，还可以开发和使用开源的 Webpack 插件，来满足各式各样的需求</p>
-<h3>智能解析</h3>
+<h3 id="zhi-neng-jie-xi">智能解析</h3>
 <p>Webpack 有一个智能解析器，几乎可以处理任何第三方库，无论它们的模块形式是 CommonJS、 AMD 还是普通的 JS 文件。甚至在加载依赖的时候，允许使用动态表达式 require(&quot;./templates/&quot; + name + &quot;.jade&quot;)</p>
-<h3>快速运行</h3>
+<h3 id="kuai-su-yun-xing">快速运行</h3>
 <p>Webpack 使用异步 I/O 和多级缓存提高运行效率，这使得 Webpack 能够以令人难以置信的速度快速增量编译。</p>
-<h2>使用</h2>
+<h2 id="shi-yong">使用</h2>
 <p>有两种方式使用webpack：</p>
 <ul>
 <li>一种是使用命令行的方式 （在项目中不推荐使用，本文不介绍）</li>
 <li>另一种写一个名为 webpack.config.js 的文件</li>
 </ul>
-<h3>简单的配置</h3>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">    entry: &apos;./app.jsx&apos;,</div><div class="line">    output: &#123;</div><div class="line">        path: &apos;./&apos;,</div><div class="line">        filename: &apos;app.js&apos;</div><div class="line">    &#125;,</div><div class="line">    module: &#123;</div><div class="line">        loaders: [&#123;</div><div class="line">            test: /\.jsx$/,</div><div class="line">            loader: &apos;jsx-loader&apos;</div><div class="line">        &#125;]</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2>属性解释</h2>
-<h3>entry</h3>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">entry: &#123;</div><div class="line">        page1: &quot;./page1&quot;,</div><div class="line">        //支持数组形式，将加载数组中的所有模块</div><div class="line">        page2: [&quot;./entry1&quot;, &quot;./entry2&quot;]</div><div class="line">    &#125;,</div></pre></td></tr></table></figure></p>
+<h3 id="jian-dan-de-pei-zhi">简单的配置</h3>
+<p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line"><span class="attr">    entry:</span> <span class="string">'./app.jsx'</span>,</div><div class="line"><span class="attr">    output:</span> &#123;</div><div class="line"><span class="attr">        path:</span> <span class="string">'./'</span>,</div><div class="line"><span class="attr">        filename:</span> <span class="string">'app.js'</span></div><div class="line">    &#125;,</div><div class="line"><span class="attr">    module:</span> &#123;</div><div class="line"><span class="attr">        loaders:</span> [&#123;</div><div class="line"><span class="attr">            test:</span> /\.jsx$/,</div><div class="line"><span class="attr">            loader:</span> <span class="string">'jsx-loader'</span></div><div class="line">        &#125;]</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="shu-xing-jie-shi">属性解释</h2>
+<h3 id="entry">entry</h3>
+<p><figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">entry:</span> &#123;</div><div class="line"><span class="symbol">        page1:</span> <span class="string">"./page1"</span>,</div><div class="line">        <span class="comment">//支持数组形式，将加载数组中的所有模块</span></div><div class="line"><span class="symbol">        page2:</span> [<span class="string">"./entry1"</span>, <span class="string">"./entry2"</span>]</div><div class="line">    &#125;,</div></pre></td></tr></table></figure></p>
 <p>entry：指定打包的入口文件，每有一个键值对，就是一个入口文件
 如果不在这里指定，而且又不在项目代码的引用链中，那么webpack不会加载。</p>
-<h3>output</h3>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">output: &#123;</div><div class="line">		path: __dirname,</div><div class="line">		filename: &apos;[name].js&apos;</div><div class="line">	&#125;,</div></pre></td></tr></table></figure></p>
+<h3 id="output">output</h3>
+<p><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">output</span>: &#123;</div><div class="line">		<span class="attribute">path</span>: __dirname,</div><div class="line">		filename: <span class="string">'[name].js'</span></div><div class="line">	&#125;,</div></pre></td></tr></table></figure></p>
 <p>output：配置打包结果，path定义了输出的文件夹，filename则定义了打包结果文件的名称，filename里面的 [name] 会由entry中的键值替换</p>
 <p>其中有一个最重要的但容易被忽略的配置是publicPath，它表示构建结果最终被真正访问的路径</p>
-<h4>PublicPath</h4>
-<h3>resolve</h3>
+<h4 id="public-path">PublicPath</h4>
+<h3 id="resolve">resolve</h3>
 <p>定义了解析模块路径时的配置</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">resolve: &#123;</div><div class="line">        root： &apos;~/workspace/index.js&apos;  //绝对路径</div><div class="line">		</div><div class="line">		// 现在你require文件的时候可以直接使用require(&apos;file&apos;)，不用使用require(&apos;file.js&apos;)</div><div class="line">		extensions: [&apos;&apos;, &apos;.js&apos;, &apos;.jsx&apos;] </div><div class="line">	&#125;,</div></pre></td></tr></table></figure></p>
+<p><figure class="highlight livescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">resolve: &#123;</div><div class="line">        root： <span class="string">'~/workspace/index.js'</span>  <span class="regexp">//绝对路径</span></div><div class="line">		</div><div class="line">		// 现在你<span class="built_in">require</span>文件的时候可以直接使用<span class="built_in">require</span>(<span class="string">'file'</span>)，不用使用<span class="built_in">require</span>(<span class="string">'file.js'</span>)</div><div class="line">		extensions: [<span class="string">''</span>, <span class="string">'.js'</span>, <span class="string">'.jsx'</span>] </div><div class="line">	&#125;,</div></pre></td></tr></table></figure></p>
 <ul>
 <li>root 绝对路径，从此路径开始加载</li>
 <li>extensions 用来指定模块的后缀，这样在引入模块时就不需要写后缀了，会自动补全</li>
 </ul>
-<h3>module</h3>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">module: &#123;</div><div class="line">		loaders: [&#123;</div><div class="line">			test: /\.js$/,</div><div class="line">			loader: &apos;babel-loader&apos;</div><div class="line">		&#125;, &#123;</div><div class="line">			test: /\.jsx$/,</div><div class="line">			loader: &apos;babel-loader!jsx-loader?harmony&apos;</div><div class="line">		&#125;]</div><div class="line">	&#125;,</div></pre></td></tr></table></figure></p>
+<h3 id="module">module</h3>
+<p><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">module</span>: &#123;</div><div class="line">		<span class="attribute">loaders</span>: [&#123;</div><div class="line">			test: /\.js$/,</div><div class="line">			loader: <span class="string">'babel-loader'</span></div><div class="line">		&#125;, &#123;</div><div class="line">			<span class="attribute">test</span>: /\.jsx$/,</div><div class="line">			loader: <span class="string">'babel-loader!jsx-loader?harmony'</span></div><div class="line">		&#125;]</div><div class="line">	&#125;,</div></pre></td></tr></table></figure></p>
 <p>定义了对模块的处理逻辑，这里可以用loaders定义了一系列的加载器，以及一些正则。当需要加载的文件匹配test的正则时，就会调用后面的loader对文件进行处理，这正是webpack强大的原因</p>
 <p>注意：
 &quot;-loader&quot;其实是可以省略不写的，多个loader之间用“!”连接起来</p>
-<h4>css处理</h4>
-<h4>less处理</h4>
-<h4>sass处理</h4>
-<h4>图片处理</h4>
+<h4 id="css-chu-li">css处理</h4>
+<h4 id="less-chu-li">less处理</h4>
+<h4 id="sass-chu-li">sass处理</h4>
+<h4 id="tu-pian-chu-li">图片处理</h4>
 <p>图片的处理需要安装url-loader.   limit= xx 的意思是当图片文件小于xx时，转换为base64的格式。同时指定生成到<code>/images/</code>的目录下</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    test: /\.(png|jpg)$/,</div><div class="line">    exclude: /node_modules/,</div><div class="line">    loader: &apos;url-loader?limit=8192&amp;name=/images/[name].[ext]&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h4>字体处理</h4>
-<h3>plugins</h3>
+<p><figure class="highlight clojure"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    test: /\.(<span class="name">png</span>|jpg)$/,</div><div class="line">    exclude: /node_modules/,</div><div class="line">    loader: 'url-loader?limit=8192&amp;name=/images/[name].[ext]'</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="zi-ti-chu-li">字体处理</h4>
+<h3 id="plugins">plugins</h3>
 <p>这里定义了需要使用的插件</p>
 <p>常用的组件：</p>
 <ul>
@@ -466,18 +473,18 @@ webpack 的依赖树中有同步和异步两种依赖方式。其中，异步模
 <li><a href="https://github.com/michael-ciniawsky/postcss-load-config" target="_blank" rel="external">Htmlwbpackplugin</a> //可以自动生成html文件</li>
 </ul>
 <p>eg1：
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">var webpack = require(&apos;webpack&apos;);</div><div class="line">var commonsPlugin = new webpack.optimize.CommonsChunkPlugin(&apos;common.js&apos;);</div><div class="line"></div><div class="line">module.exports = &#123;</div><div class="line">	plugins: [commonsPlugin]</div><div class="line">&#125;</div><div class="line"></div><div class="line">或者支持自定义的提取</div><div class="line">var CommonsChunkPlugin = require(&quot;webpack/lib/optimize/CommonsChunkPlugin&quot;);</div><div class="line"></div><div class="line">module.exports = &#123;</div><div class="line">    entry: &#123;</div><div class="line">        p1: &quot;./page1&quot;,</div><div class="line">        p2: &quot;./page2&quot;,</div><div class="line">        p3: &quot;./page3&quot;,</div><div class="line">        ap1: &quot;./admin/page1&quot;,</div><div class="line">        ap2: &quot;./admin/page2&quot;</div><div class="line">    &#125;,</div><div class="line">    output: &#123;</div><div class="line">        filename: &quot;[name].js&quot;</div><div class="line">    &#125;,</div><div class="line">    plugins: [</div><div class="line">        new CommonsChunkPlugin(&quot;admin-commons.js&quot;, [&quot;ap1&quot;, &quot;ap2&quot;]),</div><div class="line">        new CommonsChunkPlugin(&quot;commons.js&quot;, [&quot;p1&quot;, &quot;p2&quot;, &quot;admin-commons.js&quot;])</div><div class="line">    ]</div><div class="line">&#125;;</div><div class="line">// &lt;script&gt;s required:</div><div class="line">// page1.html: commons.js, p1.js</div><div class="line">// page2.html: commons.js, p2.js</div><div class="line">// page3.html: p3.js</div><div class="line">// admin-page1.html: commons.js, admin-commons.js, ap1.js</div><div class="line">// admin-page2.html: commons.js, admin-commons.js, ap2.js</div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</div><div class="line"><span class="keyword">var</span> commonsPlugin = <span class="keyword">new</span> webpack.optimize.CommonsChunkPlugin(<span class="string">'common.js'</span>);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">	<span class="attr">plugins</span>: [commonsPlugin]</div><div class="line">&#125;</div><div class="line"></div><div class="line">或者支持自定义的提取</div><div class="line"><span class="keyword">var</span> CommonsChunkPlugin = <span class="built_in">require</span>(<span class="string">"webpack/lib/optimize/CommonsChunkPlugin"</span>);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">entry</span>: &#123;</div><div class="line">        <span class="attr">p1</span>: <span class="string">"./page1"</span>,</div><div class="line">        <span class="attr">p2</span>: <span class="string">"./page2"</span>,</div><div class="line">        <span class="attr">p3</span>: <span class="string">"./page3"</span>,</div><div class="line">        <span class="attr">ap1</span>: <span class="string">"./admin/page1"</span>,</div><div class="line">        <span class="attr">ap2</span>: <span class="string">"./admin/page2"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">output</span>: &#123;</div><div class="line">        <span class="attr">filename</span>: <span class="string">"[name].js"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">plugins</span>: [</div><div class="line">        <span class="keyword">new</span> CommonsChunkPlugin(<span class="string">"admin-commons.js"</span>, [<span class="string">"ap1"</span>, <span class="string">"ap2"</span>]),</div><div class="line">        <span class="keyword">new</span> CommonsChunkPlugin(<span class="string">"commons.js"</span>, [<span class="string">"p1"</span>, <span class="string">"p2"</span>, <span class="string">"admin-commons.js"</span>])</div><div class="line">    ]</div><div class="line">&#125;;</div><div class="line"><span class="comment">// &lt;script&gt;s required:</span></div><div class="line"><span class="comment">// page1.html: commons.js, p1.js</span></div><div class="line"><span class="comment">// page2.html: commons.js, p2.js</span></div><div class="line"><span class="comment">// page3.html: p3.js</span></div><div class="line"><span class="comment">// admin-page1.html: commons.js, admin-commons.js, ap1.js</span></div><div class="line"><span class="comment">// admin-page2.html: commons.js, admin-commons.js, ap2.js</span></div></pre></td></tr></table></figure></p>
 <p>eg2:
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var ExtractTextPlugin = require(&quot;extract-text-webpack-plugin&quot;);</div><div class="line">module.exports = &#123;</div><div class="line">        plugins: [new ExtractTextPlugin(&quot;[name].css&quot;)],</div><div class="line">      &#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ExtractTextPlugin = <span class="built_in">require</span>(<span class="string">"extract-text-webpack-plugin"</span>);</div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">        <span class="attr">plugins</span>: [<span class="keyword">new</span> ExtractTextPlugin(<span class="string">"[name].css"</span>)],</div><div class="line">      &#125;</div></pre></td></tr></table></figure></p>
 <p>eg3:</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">        plugins: [</div><div class="line">        // 这个插件搜索相似的块与文件并合并它们</div><div class="line">        new webpack.optimize.DedupePlugin(),</div><div class="line">        </div><div class="line">        // 这个插件通过计算子块和模块的使用次数进行优化</div><div class="line">        new webpack.optimize.OccurenceOrderPlugin()</div><div class="line">        ],</div><div class="line">      &#125;</div></pre></td></tr></table></figure></p>
-<h2>webpack 运行参数</h2>
-<h3>webpack</h3>
+<p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">module<span class="selector-class">.exports</span> = &#123;</div><div class="line">        plugins: [</div><div class="line">        <span class="comment">// 这个插件搜索相似的块与文件并合并它们</span></div><div class="line">        new webpack<span class="selector-class">.optimize</span><span class="selector-class">.DedupePlugin</span>(),</div><div class="line">        </div><div class="line">        <span class="comment">// 这个插件通过计算子块和模块的使用次数进行优化</span></div><div class="line">        new webpack<span class="selector-class">.optimize</span><span class="selector-class">.OccurenceOrderPlugin</span>()</div><div class="line">        ],</div><div class="line">      &#125;</div></pre></td></tr></table></figure></p>
+<h2 id="webpack-yun-xing-can-shu">webpack 运行参数</h2>
+<h3 id="webpack">webpack</h3>
 <ul>
 <li>webapck 执行一次开发的变异</li>
 </ul>
-<h3>webpack-dev-server</h3>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ webpack-dev-server --display-error-details --history-api-fallback --hot --inline --progress --colors --port 4000 --host 0.0.0.0</div></pre></td></tr></table></figure></p>
+<h3 id="webpack-dev-server">webpack-dev-server</h3>
+<p><figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">$</span> <span class="comment">webpack</span><span class="literal">-</span><span class="comment">dev</span><span class="literal">-</span><span class="comment">server</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">display</span><span class="literal">-</span><span class="comment">error</span><span class="literal">-</span><span class="comment">details</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">history</span><span class="literal">-</span><span class="comment">api</span><span class="literal">-</span><span class="comment">fallback</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">hot</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">inline</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">progress</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">colors</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">port</span> <span class="comment">4000</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">host</span> <span class="comment">0</span><span class="string">.</span><span class="comment">0</span><span class="string">.</span><span class="comment">0</span><span class="string">.</span><span class="comment">0</span></div></pre></td></tr></table></figure></p>
 <ul>
 <li>--display-error-details 推荐加上的，方便出错时能查阅更详尽的信息</li>
 <li>--progress 带有进度</li>
@@ -485,12 +492,12 @@ webpack 的依赖树中有同步和异步两种依赖方式。其中，异步模
 <li>--profile 输出性能数据，可以看到每一步的耗时</li>
 <li>--display-modules 默认情况下 node_modules 下的模块会被隐藏，加上这个参数可以显示这些被隐藏的模块</li>
 </ul>
-<h2>设置缓存</h2>
+<h2 id="she-zhi-huan-cun">设置缓存</h2>
 <p>对于静态文件，第一次获取之后，文件内容没改变的话，浏览器直接读取缓存文件即可。那如果缓存设置过长，文件要更新怎么办呢？嗯，以文件内容的 MD5 作为文件名就是一个不错的解决方案。</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">output: &#123;</div><div class="line">   path: __dirname + &apos;/build&apos;,</div><div class="line">   filename: &apos;[bundle]-[chunkhash:6].js&apos;</div><div class="line"> &#125;,</div></pre></td></tr></table></figure></p>
+<p><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">output</span>: &#123;</div><div class="line">   <span class="attribute">path</span>: __dirname + <span class="string">'/build'</span>,</div><div class="line">   filename: <span class="string">'[bundle]-[chunkhash:6].js'</span></div><div class="line"> &#125;,</div></pre></td></tr></table></figure></p>
 <p>output:
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[bundle]-6519c9.js</div></pre></td></tr></table></figure></p>
-<h2>搭建脚手架需要解决的问题</h2>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-attr">[bundle]</span><span class="selector-tag">-6519c9</span><span class="selector-class">.js</span></div></pre></td></tr></table></figure></p>
+<h2 id="da-jian-jiao-shou-jia-xu-yao-jie-jue-de-wen-ti">搭建脚手架需要解决的问题</h2>
 <ul>
 <li>ES6支持</li>
 <li>React JSX支持</li>
@@ -501,20 +508,20 @@ webpack 的依赖树中有同步和异步两种依赖方式。其中，异步模
 <li>自动刷新</li>
 <li>局部自动刷新</li>
 </ul>
-<h2>功能标识</h2>
+<h2 id="gong-neng-biao-shi">功能标识</h2>
 <p>项目中有些代码我们只为在开发环境（例如日志）或者是内部测试环境（例如那些没有发布的新功能）中使用，那就需要引入下面这些魔法全局变量（magic globals）：</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">if (__DEV__) &#123;</div><div class="line">  console.warn(&apos;Extra logging&apos;);</div><div class="line">&#125;</div><div class="line">// ...</div><div class="line">if (__PRERELEASE__) &#123;</div><div class="line">  showSecretFeature();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">if</span> (__DEV__) &#123;</div><div class="line">  <span class="selector-tag">console</span><span class="selector-class">.warn</span>(<span class="string">'Extra logging'</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">// ...</span></div><div class="line"><span class="selector-tag">if</span> (__PRERELEASE__) &#123;</div><div class="line">  <span class="selector-tag">showSecretFeature</span>();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>同时还要在webpack.config.js中配置这些变量，使得webpack能够识别他们。
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">// webpack.config.js</div><div class="line"></div><div class="line">// definePlugin 会把定义的string 变量插入到Js代码中。</div><div class="line">var definePlugin = new webpack.DefinePlugin(&#123;</div><div class="line">  __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || &apos;true&apos;)),</div><div class="line">  __PRERELEASE__: JSON.stringify(JSON.parse(process.env.BUILD_PRERELEASE || &apos;false&apos;))</div><div class="line">&#125;);</div><div class="line"></div><div class="line">module.exports = &#123;</div><div class="line">  entry: &apos;./main.js&apos;,</div><div class="line">  output: &#123;</div><div class="line">    filename: &apos;bundle.js&apos;</div><div class="line">  &#125;,</div><div class="line">  plugins: [definePlugin]</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// webpack.config.js</span></div><div class="line"></div><div class="line"><span class="comment">// definePlugin 会把定义的string 变量插入到Js代码中。</span></div><div class="line"><span class="keyword">var</span> definePlugin = <span class="keyword">new</span> webpack.DefinePlugin(&#123;</div><div class="line">  <span class="attr">__DEV__</span>: <span class="built_in">JSON</span>.stringify(<span class="built_in">JSON</span>.parse(process.env.BUILD_DEV || <span class="string">'true'</span>)),</div><div class="line">  <span class="attr">__PRERELEASE__</span>: <span class="built_in">JSON</span>.stringify(<span class="built_in">JSON</span>.parse(process.env.BUILD_PRERELEASE || <span class="string">'false'</span>))</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">entry</span>: <span class="string">'./main.js'</span>,</div><div class="line">  <span class="attr">output</span>: &#123;</div><div class="line">    <span class="attr">filename</span>: <span class="string">'bundle.js'</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">plugins</span>: [definePlugin]</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
 <p>配置完成后，就可以使用 BUILD_DEV=1 BUILD_PRERELEASE=1 webpack来打包代码了。 值得注意的是，webpack -p 会删除所有无作用代码，也就是说那些包裹在这些全局变量下的代码块都会被删除，这样就能保证这些代码不会因发布上线而泄露。</p>
-<h2>Webpack-dev-server</h2>
+<h2 id="webpack-dev-server-1">Webpack-dev-server</h2>
 <p>webpack-dev-server 是运行在<code>内存中</code>的，所以不会像执行webpack一样，编译出真实的文件</p>
-<h2>SourceMaps</h2>
-<h2>Hot Module Replacement</h2>
+<h2 id="source-maps">SourceMaps</h2>
+<h2 id="hot-module-replacement">Hot Module Replacement</h2>
 <p>热模块替换改变，添加，移除模块而不需要页面的刷新
 使用<strong>webpack-dev-server</strong> 有两种方式打开HMR
 方法1：在命令行中加入 <code>--hot</code>和 <code>--inine</code>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">webpack-dev-server --hot --inline</div></pre></td></tr></table></figure></p>
+<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">webpack</span><span class="literal">-</span><span class="comment">dev</span><span class="literal">-</span><span class="comment">server</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">hot</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">inline</span></div></pre></td></tr></table></figure></p>
 <ul>
 <li><code>--hot</code> 自动添加HotModuleReplacementPlugin插件</li>
 <li><code>--inline</code> 将webpack-dev-server运行时嵌入到bundle中</li>
@@ -526,8 +533,8 @@ webpack 的依赖树中有同步和异步两种依赖方式。其中，异步模
 <li>add webpack/hot/dev-server and webpack-dev-server/client?http://localhost:8080 to the entry field</li>
 </ul>
 <p>Eg：
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">var webpack = require(&apos;webpack&apos;);</div><div class="line">var path = require(&apos;path&apos;);</div><div class="line"></div><div class="line">module.exports = &#123;</div><div class="line">  entry: [</div><div class="line">    &apos;webpack/hot/dev-server&apos;,</div><div class="line">    &apos;webpack-dev-server/client?http://localhost:8080&apos;,</div><div class="line">    &apos;./index.js&apos;</div><div class="line">  ],</div><div class="line">  output: &#123;</div><div class="line">    filename: &apos;bundle.js&apos;,</div><div class="line">    publicPath: &apos;/static/&apos;</div><div class="line">  &#125;,</div><div class="line">  plugins: [</div><div class="line">    new webpack.HotModuleReplacementPlugin()</div><div class="line">  ],</div><div class="line">  module: &#123;</div><div class="line">    loaders: [&#123;</div><div class="line">      test: /\.jsx?$/,</div><div class="line">      exclude: /node_modules/,</div><div class="line">      loader: &apos;babel-loader&apos;,</div><div class="line">      query: &#123;</div><div class="line">        presets: [&apos;es2015&apos;, &apos;react&apos;]</div><div class="line">      &#125;,</div><div class="line">      include: path.join(__dirname, &apos;.&apos;)</div><div class="line">    &#125;]</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<h2>自动刷新</h2>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</div><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  entry: [</div><div class="line">    <span class="string">'webpack/hot/dev-server'</span>,</div><div class="line">    <span class="string">'webpack-dev-server/client?http://localhost:8080'</span>,</div><div class="line">    <span class="string">'./index.js'</span></div><div class="line">  ],</div><div class="line">  output: &#123;</div><div class="line">    filename: <span class="string">'bundle.js'</span>,</div><div class="line">    publicPath: <span class="string">'/static/'</span></div><div class="line">  &#125;,</div><div class="line">  plugins: [</div><div class="line">    <span class="keyword">new</span> webpack.HotModuleReplacementPlugin()</div><div class="line">  ],</div><div class="line">  <span class="keyword">module</span>: &#123;</div><div class="line">    loaders: [&#123;</div><div class="line">      test: <span class="regexp">/\.jsx?$/</span>,</div><div class="line">      exclude: <span class="regexp">/node_modules/</span>,</div><div class="line">      loader: <span class="string">'babel-loader'</span>,</div><div class="line">      query: &#123;</div><div class="line">        presets: [<span class="string">'es2015'</span>, <span class="string">'react'</span>]</div><div class="line">      &#125;,</div><div class="line">      include: path.join(__dirname, <span class="string">'.'</span>)</div><div class="line">    &#125;]</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<h2 id="zi-dong-shua-xin">自动刷新</h2>
 <p>webpack-dev-server支持两种模式的自动刷新。</p>
 <p><strong>iframe模式</strong></p>
 <p>使用iframe模式并不需要多余的配置，直接访问http://[host]:[port]/webpack-dev-server/[path]即可，iframe模式的特征如下：</p>
@@ -556,23 +563,23 @@ webpack 的依赖树中有同步和异步两种依赖方式。其中，异步模
 <li>➙ 在命令行中指定<code>--inline</code>参数，比如：<code>webpack-dev-server --inline</code></li>
 <li>➙ 在webpack.config.js配置文件中添加devServer: {inline: true}</li>
 </ul>
-<h2>问题</h2>
-<h3>不能自动刷新</h3>
+<h2 id="wen-ti">问题</h2>
+<h3 id="bu-neng-zi-dong-shua-xin">不能自动刷新</h3>
 <p>场景：发现一个问题就是在一个项目中的是可以自动刷新的，但是相同的代码在另一个项目中就不能自动的刷新
 分析：起初以为是代码的问题，结果尝试将两个代码的配置项改为相同的还是不行，尝试无果，在论坛上发现有人是因为在osx
 （mac）上的文件夹的名字大写导致的，所以尝试将项目的文件夹的名字更改
 解决：更改不能work的文件夹的名字为简单的英文即可，很坑。</p>
-<h3>添加第三方依赖失败</h3>
+<h3 id="tian-jia-di-san-fang-yi-lai-shi-bai">添加第三方依赖失败</h3>
 <p>场景：尝试在webpack中添加jquery，参考了官网的写法但是一直不能work
 分析：
 解决：将webpack的config的文件中的entry中的vendor的值由 string 改为 array即可</p>
-<h2>学习资料</h2>
+<h2 id="xue-xi-zi-liao">学习资料</h2>
 <p>视频：</p>
 <p>书：</p>
 <ul>
 <li>Webpack 中文指南 http://zhaoda.net/webpack-handbook/</li>
 </ul>
-<h2>参考资料</h2>
+<h2 id="can-kao-zi-liao">参考资料</h2>
 <p>官网：http://webpack.github.io/docs/</p>
 <p>文章：</p>
 <ul>
@@ -720,12 +727,15 @@ webpack 的依赖树中有同步和异步两种依赖方式。其中，异步模
           <p class="site-description motion-element" itemprop="description">世界如此之大，做一个什么样的自己完全取决于你自己的选择</p>
         </div>
         <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">8</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
 
           
             <div class="site-state-item site-state-categories">
@@ -739,7 +749,7 @@ webpack 的依赖树中有同步和异步两种依赖方式。其中，异步模
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -785,7 +795,7 @@ webpack 的依赖树中有同步和异步两种依赖方式。其中，异步模
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">webpack 特点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">code splitting （代码拆分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text">loader（加载器）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.</span> <span class="nav-text">plugins（插件）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.</span> <span class="nav-text">智能解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.5.</span> <span class="nav-text">快速运行</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.1.</span> <span class="nav-text">简单的配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">属性解释</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.1.</span> <span class="nav-text">entry</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.2.</span> <span class="nav-text">output</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">3.2.1.</span> <span class="nav-text">PublicPath</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.3.</span> <span class="nav-text">resolve</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.4.</span> <span class="nav-text">module</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">3.4.1.</span> <span class="nav-text">css处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">3.4.2.</span> <span class="nav-text">less处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">3.4.3.</span> <span class="nav-text">sass处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">3.4.4.</span> <span class="nav-text">图片处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">3.4.5.</span> <span class="nav-text">字体处理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.5.</span> <span class="nav-text">plugins</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">webpack 运行参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">4.1.</span> <span class="nav-text">webpack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">4.2.</span> <span class="nav-text">webpack-dev-server</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">设置缓存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">搭建脚手架需要解决的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">7.</span> <span class="nav-text">功能标识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">8.</span> <span class="nav-text">Webpack-dev-server</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">9.</span> <span class="nav-text">SourceMaps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">10.</span> <span class="nav-text">Hot Module Replacement</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">11.</span> <span class="nav-text">自动刷新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">12.</span> <span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">12.1.</span> <span class="nav-text">不能自动刷新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">12.2.</span> <span class="nav-text">添加第三方依赖失败</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">13.</span> <span class="nav-text">学习资料</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">14.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack-te-dian"><span class="nav-number">1.</span> <span class="nav-text">webpack 特点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#code-splitting-dai-ma-chai-fen"><span class="nav-number">1.1.</span> <span class="nav-text">code splitting （代码拆分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#loader-jia-zai-qi"><span class="nav-number">1.2.</span> <span class="nav-text">loader（加载器）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#plugins-cha-jian"><span class="nav-number">1.3.</span> <span class="nav-text">plugins（插件）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zhi-neng-jie-xi"><span class="nav-number">1.4.</span> <span class="nav-text">智能解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kuai-su-yun-xing"><span class="nav-number">1.5.</span> <span class="nav-text">快速运行</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shi-yong"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#jian-dan-de-pei-zhi"><span class="nav-number">2.1.</span> <span class="nav-text">简单的配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shu-xing-jie-shi"><span class="nav-number">3.</span> <span class="nav-text">属性解释</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#entry"><span class="nav-number">3.1.</span> <span class="nav-text">entry</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#output"><span class="nav-number">3.2.</span> <span class="nav-text">output</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#public-path"><span class="nav-number">3.2.1.</span> <span class="nav-text">PublicPath</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#resolve"><span class="nav-number">3.3.</span> <span class="nav-text">resolve</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#module"><span class="nav-number">3.4.</span> <span class="nav-text">module</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#css-chu-li"><span class="nav-number">3.4.1.</span> <span class="nav-text">css处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#less-chu-li"><span class="nav-number">3.4.2.</span> <span class="nav-text">less处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sass-chu-li"><span class="nav-number">3.4.3.</span> <span class="nav-text">sass处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tu-pian-chu-li"><span class="nav-number">3.4.4.</span> <span class="nav-text">图片处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#zi-ti-chu-li"><span class="nav-number">3.4.5.</span> <span class="nav-text">字体处理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#plugins"><span class="nav-number">3.5.</span> <span class="nav-text">plugins</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack-yun-xing-can-shu"><span class="nav-number">4.</span> <span class="nav-text">webpack 运行参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#webpack"><span class="nav-number">4.1.</span> <span class="nav-text">webpack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#webpack-dev-server"><span class="nav-number">4.2.</span> <span class="nav-text">webpack-dev-server</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#she-zhi-huan-cun"><span class="nav-number">5.</span> <span class="nav-text">设置缓存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#da-jian-jiao-shou-jia-xu-yao-jie-jue-de-wen-ti"><span class="nav-number">6.</span> <span class="nav-text">搭建脚手架需要解决的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gong-neng-biao-shi"><span class="nav-number">7.</span> <span class="nav-text">功能标识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack-dev-server-1"><span class="nav-number">8.</span> <span class="nav-text">Webpack-dev-server</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#source-maps"><span class="nav-number">9.</span> <span class="nav-text">SourceMaps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hot-module-replacement"><span class="nav-number">10.</span> <span class="nav-text">Hot Module Replacement</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zi-dong-shua-xin"><span class="nav-number">11.</span> <span class="nav-text">自动刷新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wen-ti"><span class="nav-number">12.</span> <span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bu-neng-zi-dong-shua-xin"><span class="nav-number">12.1.</span> <span class="nav-text">不能自动刷新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tian-jia-di-san-fang-yi-lai-shi-bai"><span class="nav-number">12.2.</span> <span class="nav-text">添加第三方依赖失败</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xue-xi-zi-liao"><span class="nav-number">13.</span> <span class="nav-text">学习资料</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#can-kao-zi-liao"><span class="nav-number">14.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>
@@ -949,6 +959,8 @@ webpack 的依赖树中有同步和异步两种依赖方式。其中，异步模
     <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
     <script src="/js/src/hook-duoshuo.js"></script>
   
+
+
 
 
 

@@ -77,7 +77,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0" />
+  <link rel="shortcut icon" type="image/x-icon" href="/images/avatar.jpg?v=5.1.0" />
 
 
 
@@ -88,7 +88,7 @@
 优化
 1.如何区分开发及生产环境
 在package.json里面的script设置环境变量，注意mac与windows的设置方式不一样
-1234&amp;quot;scripts&amp;quot;: &amp;#123;    &amp;quot;publish-mac&amp;quot;: &amp;quot;export NODE_ENV=prod&amp;amp;&amp;amp;webpack -p --progress -">
+1234&quot;scripts&quot;: &amp;#123;    &quot;publish-mac&quot;: &quot;export NODE_ENV=prod&amp;amp;&amp;amp;webpack -p --progress --colors&quot;,    &quot;publish-win">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Webpack-high-optimize">
 <meta property="og:url" content="http://yoursite.com/2016/12/21/webpack-high-optimize/index.html">
@@ -97,15 +97,15 @@
 优化
 1.如何区分开发及生产环境
 在package.json里面的script设置环境变量，注意mac与windows的设置方式不一样
-1234&amp;quot;scripts&amp;quot;: &amp;#123;    &amp;quot;publish-mac&amp;quot;: &amp;quot;export NODE_ENV=prod&amp;amp;&amp;amp;webpack -p --progress -">
-<meta property="og:updated_time" content="2016-12-20T18:13:43.000Z">
+1234&quot;scripts&quot;: &amp;#123;    &quot;publish-mac&quot;: &quot;export NODE_ENV=prod&amp;amp;&amp;amp;webpack -p --progress --colors&quot;,    &quot;publish-win">
+<meta property="og:updated_time" content="2016-12-26T14:54:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Webpack-high-optimize">
 <meta name="twitter:description" content="webpack 高级优化
 优化
 1.如何区分开发及生产环境
 在package.json里面的script设置环境变量，注意mac与windows的设置方式不一样
-1234&amp;quot;scripts&amp;quot;: &amp;#123;    &amp;quot;publish-mac&amp;quot;: &amp;quot;export NODE_ENV=prod&amp;amp;&amp;amp;webpack -p --progress -">
+1234&quot;scripts&quot;: &amp;#123;    &quot;publish-mac&quot;: &quot;export NODE_ENV=prod&amp;amp;&amp;amp;webpack -p --progress --colors&quot;,    &quot;publish-win">
 
 
 
@@ -152,7 +152,7 @@
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?10aa6be99d86164c9368d5bd303c3a93";
+      hm.src = "https://hm.baidu.com/hm.js?10aa6be99d86164c9368d5bd303c3a93";
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
@@ -184,7 +184,9 @@
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle">过程即是最好的结局</p>
+    
+      <p class="site-subtitle">过程即是最好的结局</p>
+    
 </div>
 
 <div class="site-nav-toggle">
@@ -339,7 +341,9 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-21T02:11:02+08:00">
                 2016-12-21
               </time>
@@ -356,6 +360,9 @@
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2016/12/21/webpack-high-optimize/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/21/webpack-high-optimize/" itemprop="commentCount"></span>
                 </a>
@@ -388,63 +395,63 @@
       
 
       
-        <h1>webpack 高级优化</h1>
-<h3>优化</h3>
-<h4>1.如何区分开发及生产环境</h4>
+        <h1 id="webpack-gao-ji-you-hua">webpack 高级优化</h1>
+<h2 id="you-hua">优化</h2>
+<h3 id="1-ru-he-qu-fen-kai-fa-ji-sheng-chan-huan-jing">1.如何区分开发及生产环境</h3>
 <p>在package.json里面的script设置环境变量，注意mac与windows的设置方式不一样</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&quot;scripts&quot;: &#123;</div><div class="line">    &quot;publish-mac&quot;: &quot;export NODE_ENV=prod&amp;&amp;webpack -p --progress --colors&quot;,</div><div class="line">    &quot;publish-win&quot;:  &quot;set NODE_ENV=prod&amp;&amp;webpack -p --progress --colors&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><figure class="highlight xquery"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="string">"scripts"</span>: &#123;</div><div class="line">    <span class="string">"publish-mac"</span>: <span class="string">"export NODE_ENV=prod&amp;&amp;webpack -p --progress --colors"</span>,</div><div class="line">    <span class="string">"publish-win"</span>:  <span class="string">"set NODE_ENV=prod&amp;&amp;webpack -p --progress --colors"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>在webpack.config.js使用process.env.NODE_ENV进行判断</p>
 <p>功能标识</p>
 <p>项目中有些代码我们只为在开发环境（例如日志）或者是内部测试环境（例如那些没有发布的新功能）中使用，那就需要引入下面这些魔法全局变量（magic globals）：</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">if (__DEV__) &#123;</div><div class="line">  console.warn(&apos;Extra logging&apos;);</div><div class="line">&#125;</div><div class="line">// ...</div><div class="line">if (__PRERELEASE__) &#123;</div><div class="line">  showSecretFeature();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">if</span> (__DEV__) &#123;</div><div class="line">  <span class="selector-tag">console</span><span class="selector-class">.warn</span>(<span class="string">'Extra logging'</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">// ...</span></div><div class="line"><span class="selector-tag">if</span> (__PRERELEASE__) &#123;</div><div class="line">  <span class="selector-tag">showSecretFeature</span>();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>同时还要在webpack.config.js中配置这些变量，使得webpack能够识别他们。</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">// webpack.config.js</div><div class="line"></div><div class="line">// definePlugin 会把定义的string 变量插入到Js代码中。</div><div class="line">var definePlugin = new webpack.DefinePlugin(&#123;</div><div class="line">  __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || &apos;true&apos;)),</div><div class="line">  __PRERELEASE__: JSON.stringify(JSON.parse(process.env.BUILD_PRERELEASE || &apos;false&apos;))</div><div class="line">&#125;);</div><div class="line"></div><div class="line">module.exports = &#123;</div><div class="line">  entry: &apos;./main.js&apos;,</div><div class="line">  output: &#123;</div><div class="line">    filename: &apos;bundle.js&apos;</div><div class="line">  &#125;,</div><div class="line">  plugins: [definePlugin]</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// webpack.config.js</span></div><div class="line"></div><div class="line"><span class="comment">// definePlugin 会把定义的string 变量插入到Js代码中。</span></div><div class="line"><span class="keyword">var</span> definePlugin = <span class="keyword">new</span> webpack.DefinePlugin(&#123;</div><div class="line">  <span class="attr">__DEV__</span>: <span class="built_in">JSON</span>.stringify(<span class="built_in">JSON</span>.parse(process.env.BUILD_DEV || <span class="string">'true'</span>)),</div><div class="line">  <span class="attr">__PRERELEASE__</span>: <span class="built_in">JSON</span>.stringify(<span class="built_in">JSON</span>.parse(process.env.BUILD_PRERELEASE || <span class="string">'false'</span>))</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">entry</span>: <span class="string">'./main.js'</span>,</div><div class="line">  <span class="attr">output</span>: &#123;</div><div class="line">    <span class="attr">filename</span>: <span class="string">'bundle.js'</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">plugins</span>: [definePlugin]</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
 <p>配置完成后，就可以使用 BUILD_DEV=1 BUILD_PRERELEASE=1 webpack来打包代码了。 值得注意的是，webpack -p 会删除所有无作用代码，也就是说那些包裹在这些全局变量下的代码块都会被删除，这样就能保证这些代码不会因发布上线而泄露。</p>
-<h4>2.使用代码热替换</h4>
+<h3 id="2-shi-yong-dai-ma-re-ti-huan">2.使用代码热替换</h3>
 <p>参考webpack-dev-server: https://webpack.github.io/docs/webpack-dev-server.html#hot-module-replacement</p>
-<h4>3.import react导致文件变大，编译速度变慢，乍办?</h4>
+<h3 id="3-import-react-dao-zhi-wen-jian-bian-da-bian-yi-su-du-bian-man-zha-ban">3.import react导致文件变大，编译速度变慢，乍办?</h3>
 <p>方法</p>
 <ul>
 <li>A 如果你想将react分离，不打包到一起，可以使用externals。然后用&lt;script&gt;单独将react引入</li>
 <li>B 如果不介意将react打包到一起，请在alias中直接指向react的文件。可以提高webpack搜索的速度。准备部署上线时记得将换成react.min，能减少文件大小(减少约600kb)</li>
 <li>C 使用module.noParse针对单独的react.min.js这类没有依赖的模块，速度会更快</li>
 </ul>
-<h4>4.将模块暴露到全局</h4>
+<h3 id="4-jiang-mo-kuai-bao-lu-dao-quan-ju">4.将模块暴露到全局</h3>
 <p>如果想将report数据上报组件放到全局，有两种办法：
 方法一：
 在loader里使expose将report暴露到全局，然后就可以直接使用report进行上报</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    test: path.join(config.path.src, &apos;/js/common/report&apos;),</div><div class="line">    loader: &apos;expose?report&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attribute">test</span>: path.<span class="built_in">join</span>(config.path.src, <span class="string">'/js/common/report'</span>),</div><div class="line">    loader: <span class="string">'expose?report'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>方法二：
 如果想用R直接代表report，除了要用expose loader之外，还需要用ProvidePlugin帮助，指向report，这样在代码中直接用R.tdw， R.monitor这样就可以</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">new webpack.ProvidePlugin(&#123;</div><div class="line">    &quot;R&quot;: &quot;report&quot;,</div><div class="line">&#125;),</div></pre></td></tr></table></figure></p>
-<h4>5. 合并公共代码</h4>
+<p><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> webpack.ProvidePlugin(&#123;</div><div class="line">    <span class="string">"R"</span>: <span class="string">"report"</span>,</div><div class="line">&#125;),</div></pre></td></tr></table></figure></p>
+<h3 id="5-he-bing-gong-gong-dai-ma">5. 合并公共代码</h3>
 <p>有些类库如utils, bootstrap之类的可能被多个页面共享，最好是可以合并成一个js，而非每个js单独去引用。这样能够节省一些空间。这时我们可以用到CommonsChunkPlugin，我们指定好生成文件的名字，以及想抽取哪些入口js文件的公共代码，webpack就会自动帮我们合并好
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">new webpack.optimize.CommonsChunkPlugin(&apos;vendor&apos;, &apos;vendor.js&apos;)</div></pre></td></tr></table></figure></p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">new webpack.optimize.CommonsChunkPlugin(&#123;</div><div class="line">           name:      &apos;main&apos;, // 把依赖移动到主文件</div><div class="line">           children:  true, // 寻找所有子模块的共同依赖</div><div class="line">           minChunks: 2, // 设置一个依赖被引用超过多少次就提取出来</div><div class="line">       &#125;),</div></pre></td></tr></table></figure></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">new webpack<span class="selector-class">.optimize</span><span class="selector-class">.CommonsChunkPlugin</span>(<span class="string">'vendor'</span>, <span class="string">'vendor.js'</span>)</div></pre></td></tr></table></figure></p>
+<p><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">new</span> <span class="selector-tag">webpack</span><span class="selector-class">.optimize</span><span class="selector-class">.CommonsChunkPlugin</span>(&#123;</div><div class="line">           <span class="attribute">name</span>:      <span class="string">'main'</span>, // 把依赖移动到主文件</div><div class="line">           children:  true, // 寻找所有子模块的共同依赖</div><div class="line">           minChunks: <span class="number">2</span>, // 设置一个依赖被引用超过多少次就提取出来</div><div class="line">       &#125;),</div></pre></td></tr></table></figure></p>
 <p>第一个参数是entry中的vendor的名字</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">entry: &#123;</div><div class="line">    jsx: &apos;./src/index.js&apos;,</div><div class="line">    html: &apos;./src/index.html&apos;,</div><div class="line">    vendor: [&apos;jquery&apos;]       //Array</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
-<h4>6.善用alias</h4>
+<p><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">entry</span>: &#123;</div><div class="line">    <span class="attribute">jsx</span>: <span class="string">'./src/index.js'</span>,</div><div class="line">    <span class="attribute">html</span>: <span class="string">'./src/index.html'</span>,</div><div class="line">    <span class="attribute">vendor</span>: [<span class="string">'jquery'</span>]       <span class="comment">//Array</span></div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<h3 id="6-shan-yong-alias">6.善用alias</h3>
 <p>resolve里面有一个alias的配置项目，能够让开发者指定一些模块的引用路径。对一些经常要被import或者require的库，如react,我们最好可以直接指定它们的位置，这样webpack可以省下不少搜索硬盘的时间。
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">alias: &#123;</div><div class="line">      &apos;react&apos;: path.join(&apos;node_modules&apos;,&apos;react/dist/react.min&apos;)</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
-<h4>7.React-hot-loader组件级热更新</h4>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">alias</span>: &#123;</div><div class="line">      <span class="string">'react'</span>: path.<span class="keyword">join</span>(<span class="string">'node_modules'</span>,<span class="string">'react/dist/react.min'</span>)</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<h4 id="7-react-hot-loader-zu-jian-ji-re-geng-xin">7.React-hot-loader组件级热更新</h4>
 <p>虽然实现了代码的热替换，只要在编辑器中保存我们编辑的代码，浏览器即可实时刷新。但同时也有一个烦恼，如果我们的项目开发中用到了几十个组件，为了测试某个组件我们需要一步步操作到固定的步骤去实现，一旦保存编辑器中修改的一行代码，从入口文件开始的所有代码都全部刷新了一次，这样很不利于调试。</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">   test: /\.jsx|js$/,</div><div class="line">   exclude: /node_modules/,</div><div class="line">   loaders: [&apos;react-hot&apos;, &apos;babel?presets[]=react,presets[]=es2015&apos;]</div><div class="line">   //原先的配置</div><div class="line">   // loader: &apos;babel-loader&apos;,</div><div class="line">   // query: &#123;</div><div class="line">   //   presets: [&apos;react&apos;, &apos;es2015&apos;]</div><div class="line">   // &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h4>8.如何压缩代码</h4>
+<p><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">   test: <span class="regexp">/\.jsx|js$/</span>,</div><div class="line">   exclude: <span class="regexp">/node_modules/</span>,</div><div class="line">   loaders: [<span class="string">'react-hot'</span>, <span class="string">'babel?presets[]=react,presets[]=es2015'</span>]</div><div class="line">   <span class="regexp">//</span>原先的配置</div><div class="line">   <span class="regexp">//</span> loader: <span class="string">'babel-loader'</span>,</div><div class="line">   <span class="regexp">//</span> query: &#123;</div><div class="line">   <span class="regexp">//</span>   presets: [<span class="string">'react'</span>, <span class="string">'es2015'</span>]</div><div class="line">   <span class="regexp">//</span> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="8-ru-he-ya-suo-dai-ma">8.如何压缩代码</h3>
 <p>在生产环境中我们需要将代码压缩，尽可能的减少代码的体积，所以需要在生产环境的webpack中加入以下插件
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  plugins: [</div><div class="line">    // 代码混淆压缩</div><div class="line">    new webpack.optimize.UglifyJsPlugin(&#123;</div><div class="line">      compress: &#123;</div><div class="line">        warnings: false</div><div class="line">      &#125;</div><div class="line">    &#125;)</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attribute">plugins</span>: [</div><div class="line">    // 代码混淆压缩</div><div class="line">    new webpack.optimize.<span class="built_in">UglifyJsPlugin</span>(&#123;</div><div class="line">      compress: &#123;</div><div class="line">        warnings: false</div><div class="line">      &#125;</div><div class="line">    &#125;)</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>加入了这个插件之后，编译的速度会明显变慢，所以一般只在生产环境启用。</p>
 <p>另外，服务器端还可以开启 gzip 压缩，优化的效果更明显。</p>
-<h4>9. 代码运行前添加eslint的检测</h4>
+<h3 id="9-dai-ma-yun-xing-qian-tian-jia-eslint-de-jian-ce">9. 代码运行前添加eslint的检测</h3>
 <p>新建一个eslint.rc的配置文件
 安装eslint-loader</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">preLoaders: [</div><div class="line">      &#123;</div><div class="line">        test: /\.js$/,</div><div class="line">        loader: &quot;eslint-loader&quot;,</div><div class="line">        exclude: /node_modules/</div><div class="line">      &#125;</div><div class="line">],</div></pre></td></tr></table></figure></p>
-<h4>10.build前先清理build目录</h4>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install clean-webpack-plugin --save-dev</div></pre></td></tr></table></figure></p>
-<h2>参考资料</h2>
+<p><figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">preLoaders:</span> [</div><div class="line">      &#123;</div><div class="line"><span class="symbol">        test:</span> /\.js$/,</div><div class="line"><span class="symbol">        loader:</span> <span class="string">"eslint-loader"</span>,</div><div class="line"><span class="symbol">        exclude:</span> /node_modules/</div><div class="line">      &#125;</div><div class="line">]</div></pre></td></tr></table></figure></p>
+<h3 id="10-build-qian-xian-qing-li-build-mu-lu">10.build前先清理build目录</h3>
+<p><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span> clean-webpack-<span class="keyword">plugin</span> <span class="comment">--save-dev</span></div></pre></td></tr></table></figure></p>
+<h2 id="can-kao-zi-liao">参考资料</h2>
 <ul>
 <li>webpack使用优化： http://www.alloyteam.com/2016/01/webpack-use-optimization/</li>
 <li>如何十倍提升你的webpack构建效率： http://gold.xitu.io/entry/5768e6ab207703006b310f95</li>
-<li>让 Webpack 来帮你打包吧： https://gold.xitu.io/entry/5767a975df0eea0062ffe193</li>
+<li>让Webpack 来帮你打包吧： https://gold.xitu.io/entry/5767a975df0eea0062ffe193</li>
 <li>webpackForSPA:  https://github.com/huangshuwei/webpackForSPA/blob/master/webpack.config.js</li>
 </ul>
 
@@ -488,6 +495,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/26/html/" rel="prev" title="Html">
+                Html <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -576,12 +587,15 @@
           <p class="site-description motion-element" itemprop="description">世界如此之大，做一个什么样的自己完全取决于你自己的选择</p>
         </div>
         <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">8</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
 
           
             <div class="site-state-item site-state-categories">
@@ -595,7 +609,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -641,7 +655,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">webpack 高级优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.1.</span> <span class="nav-text">优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">1.如何区分开发及生产环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">2.使用代码热替换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.1.3.</span> <span class="nav-text">3.import react导致文件变大，编译速度变慢，乍办?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.1.4.</span> <span class="nav-text">4.将模块暴露到全局</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.1.5.</span> <span class="nav-text">5. 合并公共代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.1.6.</span> <span class="nav-text">6.善用alias</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.1.7.</span> <span class="nav-text">7.React-hot-loader组件级热更新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.1.8.</span> <span class="nav-text">8.如何压缩代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.1.9.</span> <span class="nav-text">9. 代码运行前添加eslint的检测</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.1.10.</span> <span class="nav-text">10.build前先清理build目录</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">参考资料</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#webpack-gao-ji-you-hua"><span class="nav-number">1.</span> <span class="nav-text">webpack 高级优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#you-hua"><span class="nav-number">1.1.</span> <span class="nav-text">优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-ru-he-qu-fen-kai-fa-ji-sheng-chan-huan-jing"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.如何区分开发及生产环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-shi-yong-dai-ma-re-ti-huan"><span class="nav-number">1.1.2.</span> <span class="nav-text">2.使用代码热替换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-import-react-dao-zhi-wen-jian-bian-da-bian-yi-su-du-bian-man-zha-ban"><span class="nav-number">1.1.3.</span> <span class="nav-text">3.import react导致文件变大，编译速度变慢，乍办?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-jiang-mo-kuai-bao-lu-dao-quan-ju"><span class="nav-number">1.1.4.</span> <span class="nav-text">4.将模块暴露到全局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-he-bing-gong-gong-dai-ma"><span class="nav-number">1.1.5.</span> <span class="nav-text">5. 合并公共代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-shan-yong-alias"><span class="nav-number">1.1.6.</span> <span class="nav-text">6.善用alias</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#7-react-hot-loader-zu-jian-ji-re-geng-xin"><span class="nav-number">1.1.6.1.</span> <span class="nav-text">7.React-hot-loader组件级热更新</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-ru-he-ya-suo-dai-ma"><span class="nav-number">1.1.7.</span> <span class="nav-text">8.如何压缩代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-dai-ma-yun-xing-qian-tian-jia-eslint-de-jian-ce"><span class="nav-number">1.1.8.</span> <span class="nav-text">9. 代码运行前添加eslint的检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-build-qian-xian-qing-li-build-mu-lu"><span class="nav-number">1.1.9.</span> <span class="nav-text">10.build前先清理build目录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#can-kao-zi-liao"><span class="nav-number">1.2.</span> <span class="nav-text">参考资料</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -805,6 +819,8 @@
     <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
     <script src="/js/src/hook-duoshuo.js"></script>
   
+
+
 
 
 

@@ -149,7 +149,7 @@ ondragstart 和 setData()</p>
 <li>DataTransfer 对象：拖拽对象用来传递的媒介，使用一般为Event.dataTransfer。</li>
 <li>draggable 属性：就是标签元素要设置draggable=true，否则不会有效果，例如：</li>
 </ul>
-<p><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">title</span>=<span class="string">"拖拽我"</span> <span class="attr">draggable</span>=<span class="string">"true"</span>&gt;</span>列表1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="keyword">div</span> title=<span class="string">"拖拽我"</span> draggable=<span class="string">"true"</span>&gt;列表<span class="number">1</span>&lt;/<span class="keyword">div</span>&gt;</div></pre></td></tr></table></figure></p>
 <ul>
 <li>ondragstart 事件：当拖拽元素开始被拖拽的时候触发的事件，此事件作用在被拖曳元素上</li>
 <li>ondragenter 事件：当拖曳元素进入目标元素的时候触发的事件，此事件作用在目标元素上</li>
@@ -292,9 +292,9 @@ rowspan设置表格的占用标准表格的几行；</p>
 <p>针对搜索引擎的关键词
 一些搜索引擎会利用 meta 元素的 name 和 content 属性来索引您的页面。
 下面的 meta 元素定义页面的描述：</p>
-<p><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"description"</span> <span class="attr">content</span>=<span class="string">"Free Web tutorials on HTML, CSS, XML"</span> /&gt;</span></div></pre></td></tr></table></figure></p>
+<p><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta <span class="built_in">name</span>=<span class="string">"description"</span> content=<span class="string">"Free Web tutorials on HTML, CSS, XML"</span> /&gt;</div></pre></td></tr></table></figure></p>
 <p>下面的 meta 元素定义页面的关键词：</p>
-<p><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"HTML, CSS, XML"</span> /&gt;</span></div></pre></td></tr></table></figure></p>
+<p><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta <span class="built_in">name</span>=<span class="string">"keywords"</span> content=<span class="string">"HTML, CSS, XML"</span> /&gt;</div></pre></td></tr></table></figure></p>
 <p>name 和 content 属性的作用是描述页面的内容。</p>
 <h2 id="html-shu-xing">HTML属性</h2>
 <blockquote>

@@ -4,6 +4,189 @@
   
     
     <entry>
+      <title><![CDATA[html5]]></title>
+      <url>http://yoursite.com/2016/12/27/html5/</url>
+      <content type="html"><![CDATA[<h1 id="html-5">HTML5</h1>
+<h2 id="html-5-de-chu-xian-de-mu-de">HTML5的出现的目的</h2>
+<ul>
+<li>Web浏览器之间的兼容性很低</li>
+<li>文档结构不够明确，过多的使用<code>&lt;div&gt;</code></li>
+<li>web应用程序的功能受到了限制</li>
+</ul>
+<h2 id="html-5-ban-ben-yu-html-4-de-qu-bie">HTML5版本于HTML4的区别</h2>
+<ul>
+<li>IE 6,7,8 不支持HTML5</li>
+<li>语法的改变</li>
+<li>内容类型</li>
+</ul>
+<blockquote>
+<p>text/html</p>
+</blockquote>
+<ul>
+<li>DOCTYPE 文档类型</li>
+</ul>
+<blockquote>
+<p><code>&lt;!DOCTYPE html&gt;</code></p>
+</blockquote>
+<ul>
+<li>指定字符编码</li>
+</ul>
+<blockquote>
+<p><code>&lt;meta charset=&quot;utf=8&quot;&gt;</code></p>
+</blockquote>
+<ul>
+<li>
+<p>省略引号
+<strong>属性值可以不写双引号</strong></p>
+</li>
+<li>
+<p>带有默认值</p>
+</li>
+</ul>
+<blockquote>
+<p>checked=&quot;checked&quot;   //选中
+checked=&quot;&quot;   //选中
+check  //选中
+check=&quot;unchecked&quot;   //未选中</p>
+</blockquote>
+<h2 id="xin-zeng-yuan-su">新增元素</h2>
+<ul>
+<li>新增的结构元素
+section  ， article  ，aside，  header  ，footer ，nav  ，figure,  main</li>
+<li>新增的其他元素
+audio  ， video  ，canvas(画布)  ，mark ，time ，command ，source ，menu</li>
+<li>新增的input元素类型
+email ， url  ，number ，range</li>
+</ul>
+<h2 id="fei-chu-de-yuan-su">废除的元素</h2>
+<p>不再使用frame框架   仅支持iframe</p>
+<h2 id="xin-zeng-de-shu-xing">新增的属性</h2>
+<h2 id="fei-chu-de-shu-xing">废除的属性</h2>
+<h2 id="quan-ju-shu-xing-html-5-zhong-xin-zeng-de-te-xing">全局属性—HTML5中新增的特性</h2>
+<p><strong>可以对全局对象都适用的属性</strong></p>
+<ul>
+<li>contentEditable 属性  指定元素可编辑 ，必须是那种可以获取到鼠标焦点的
+value：true false</li>
+<li>designMode 属性 指定页面是否可以被编辑
+value：on  off</li>
+<li>hidden 属性  隐藏元素</li>
+<li>spellcheck属性  针对input和textarea输入框  新增的输入拼写检查</li>
+<li>tabindex属性   用于指定tab的显示顺序，可以让不能获取焦点的标签获取到焦点
+value：tabindex=&quot;x&quot;</li>
+</ul>
+<h2 id="biao-qian">标签</h2>
+<h3 id="chang-yong-de-biao-qian">常用的标签</h3>
+<h4 id="section">section</h4>
+<p><code>&lt;div&gt;</code>和<code>&lt;section&gt;</code>两者都有对网页进行布局的作用。<code>&lt;div&gt;</code>本身没有任何语义，仅用于页面布局或者给模块添加样式</p>
+<p><code>&lt;section&gt;</code>顾名思义就是一个章节，它适用于对文档进行分块，将文档划分为章节（常用于修饰文档大纲），或者对一篇文章进行分块，将整篇文章分成不同的内容块。</p>
+<p>**note：**注意：一个<code>&lt;section&gt;</code>元素不能是<code>&lt;address&gt;</code>元素的子节点。</p>
+<h4 id="article">article</h4>
+<p><strong><code>&lt;article&gt;</code>标签是特殊的<code>&lt;section&gt;</code>标签</strong>，与section不同，<code>&lt;article&gt;</code>标签是将文档或文章中的内容划分为相对独立的模块（如，将整本书的内容划分成多篇文章，或者将一篇文章划分成相对独立的不同的小结等），当然，我们所说的独立是指同一级别的article标签中的内容是相互独立的，所以一般在article标签内一般包含header和footer标签。</p>
+<h4 id="section-vs-article">section vs article</h4>
+<p><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">Version 1:</div><div class="line"><span class="tag">&lt;<span class="name">article</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">header</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>大家好，我是美食爱好者小丽<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">header</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>本文介绍一下美食爱好者小丽喜欢的水果。。。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">section</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>小丽喜欢的第一种水果是石榴<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>美味的石榴营养丰富，富含维C。。。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">section</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">section</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>小丽喜欢的第二种水果是葡萄<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>葡萄可以美容养颜。。。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">section</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">footer</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>版权出自小丽<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">footer</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></div><div class="line"></div><div class="line">Version 2:</div><div class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>新闻.国内专题<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">article</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">h3</span>&gt;</span>2014年南方暴雨<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>2014年南方暴雨详情<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">article</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">article</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">h3</span>&gt;</span>山西官场地震<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>山西官场地震详情介绍<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">article</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>关于两者做一下总结：一般来说,互为兄弟关系的两个相邻的<code>&lt;section&gt;</code>标签里面的内容一般是相关联的，而对于两个相邻的<code>&lt;article&gt;</code>标签而言，它们里面的内容是没有关联的，是独立的。 由上面的例子可以更加深刻地理解section和article,从语义上讲，article主要强调独立完整性，而section之间可能会有关联，每个section内容也不是完整， 正如上面的代码看到的，article是独立完整的一篇文章或者文档，而section可能有所关联且不完整。从理论上讲，article适用的内容，都可以使用section，但如果符合使用article的要求就不要使用section。</p>
+<h4 id="aside">aside</h4>
+<p>标签布局与当前文档内容相关却在此文档内容之外的内容</p>
+<h4 id="header">header</h4>
+<h4 id="footer">footer</h4>
+<h4 id="nav">nav</h4>
+<p><code>&lt;nav&gt;</code>元素代表一个部分包含链接，链接到其他页面或者同一页面的其他部分，主要定义了文档中的导航部分</p>
+<h2 id="canvas">Canvas</h2>
+<p>HTML5 的 canvas 元素使用 JavaScript 在网页上绘制图像。
+画布是一个矩形区域，您可以控制其每一像素。</p>
+<p>创建：</p>
+<p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">canvas</span> id=<span class="string">"myCanvas"</span> <span class="attribute">width</span>=<span class="string">"200"</span> height=<span class="string">"100"</span>&gt;&lt;/canvas&gt;</div></pre></td></tr></table></figure></p>
+<p><strong>canvas 元素本身是没有绘图能力的。所有的绘制工作必须在 JavaScript 内部完成</strong>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">	<span class="keyword">var</span> c=<span class="built_in">document</span>.getElementById(<span class="string">"myCanvas"</span>);</div><div class="line">	<span class="comment">//getContext("2d") 对象是内建的 HTML5 对象，拥有多种绘制路径、矩形、圆形、字符以及添加图像的方法</span></div><div class="line">	<span class="keyword">var</span> cxt=c.getContext(<span class="string">"2d"</span>);</div><div class="line">	cxt.fillStyle=<span class="string">"#FF0000"</span>;</div><div class="line">	cxt.fillRect(<span class="number">0</span>,<span class="number">0</span>,<span class="number">150</span>,<span class="number">75</span>);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="svg">SVG</h2>
+<p>HTML5 内联 SVG</p>
+<p>什么是SVG？</p>
+<ul>
+<li>SVG 指可伸缩矢量图形 (Scalable Vector Graphics)</li>
+<li>SVG 用于定义用于网络的基于矢量的图形</li>
+<li>SVG 使用 XML 格式定义图形</li>
+<li>SVG 图像在放大或改变尺寸的情况下其图形质量不会有损失</li>
+<li>SVG 是万维网联盟的标准</li>
+</ul>
+<h2 id="di-li-wei-zhi">地理位置</h2>
+<p>getCurrentPosition() 方法来获得用户的位置</p>
+<h2 id="html-5-tuo-fang">HTML5 拖放</h2>
+<p>拖放（Drag 和 Drop）是很常见的特性。它指的是您抓取某物并拖入不同的位置。
+拖放是 HTML5 标准的组成部分：任何元素都是可拖放的。</p>
+<p>如何拖放：</p>
+<blockquote>
+<p>Step1：把元素设置为可拖放，为了把一个元素设置为可拖放，请把 draggable 属性设置为 true：</p>
+</blockquote>
+<p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">img</span> id=<span class="string">"drag1"</span> src=<span class="string">"./gift.png"</span> draggable=<span class="string">"true"</span> ondragstart=<span class="string">"drag(event)"</span> <span class="attribute">width</span>=<span class="string">"336"</span> height=<span class="string">"269"</span>&gt;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>Step2：然后规定当元素被拖动时发生的事情
+ondragstart 和 setData()</p>
+</blockquote>
+<ul>
+<li>ondragstart() 可以调用一个函数（drag（event））规定拖动什么数据</li>
+<li>dataTransfer.setData() 方法设置被拖动数据的数据类型和值</li>
+</ul>
+<p><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">drag</span><span class="params">(ev)</span> </span>&#123;</div><div class="line">    ev.dataTransfer.setData(<span class="string">"text"</span>, ev.target.id);</div><div class="line">&#125;</div><div class="line"><span class="comment">//数据类型是 "text"，而值是这个可拖动元素的 id ("drag1")</span></div><div class="line"><span class="comment">//实质上是移动了这个元素到新的位置</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>Step3: 拖到何处 - ondragover</p>
+</blockquote>
+<p>ondragover 事件规定被拖动的数据能够被放置到何处。
+默认地，数据/元素无法被放置到其他元素中。为了实现拖放，我们必须阻止元素的这种默认的处理方式。
+这个任务由 ondragover 事件的 event.preventDefault() 方法完成：</p>
+<p><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">event</span>.preventDefault()</div></pre></td></tr></table></figure></p>
+<p>Step4: 进行放置 - ondrop
+当放开被拖数据时，会发生 drop 事件, ondrop 属性调用了一个函数，drop(event)：</p>
+<p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">drop</span>(<span class="params">ev</span>) </span>&#123;</div><div class="line">    ev.preventDefault();</div><div class="line">    <span class="keyword">var</span> data = ev.dataTransfer.getData(<span class="string">"text"</span>);</div><div class="line">    ev.target.appendChild(<span class="built_in">document</span>.getElementById(data));</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>解释：</p>
+<ul>
+<li>调用 preventDefault() 来阻止数据的浏览器默认处理方式（drop 事件的默认行为是以链接形式打开）</li>
+<li>通过 dataTransfer.getData() 方法获得被拖的数据。该方法将返回在 setData() 方法中设置为相同类型的任何数据</li>
+<li>被拖数据是被拖元素的 id (&quot;drag1&quot;)</li>
+<li>把被拖元素追加到放置元素中</li>
+</ul>
+<p>重点：</p>
+<ul>
+<li>DataTransfer 对象：拖拽对象用来传递的媒介，使用一般为Event.dataTransfer。</li>
+<li>draggable 属性：就是标签元素要设置draggable=true，否则不会有效果，例如：</li>
+</ul>
+<p><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">title</span>=<span class="string">"拖拽我"</span> <span class="attr">draggable</span>=<span class="string">"true"</span>&gt;</span>列表1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<ul>
+<li>ondragstart 事件：当拖拽元素开始被拖拽的时候触发的事件，此事件作用在被拖曳元素上</li>
+<li>ondragenter 事件：当拖曳元素进入目标元素的时候触发的事件，此事件作用在目标元素上</li>
+<li>ondragover 事件：拖拽元素在目标元素上移动的时候触发的事件，此事件作用在目标元素上</li>
+<li>ondrop 事件：被拖拽的元素在目标元素上同时鼠标放开触发的事件，此事件作用在目标元素上</li>
+<li>ondragend 事件：当拖拽完成后触发的事件，此事件作用在被拖曳元素上</li>
+<li>ondragleave 事件： 当拖拽的元素离开时触发，此事件作用在被拖拽元素上</li>
+<li>Event.preventDefault() 方法：阻止默认的些事件方法等执行。在ondragover中一定要执行preventDefault()，否则ondrop事件不会被触发。另外，如果是从其他应用软件或是文件中拖东西进来，尤其是图片的时候，默认的动作是显示这个图片或是相关信息，并不是真的执行drop。此时需要用用document的ondragover事件把它直接干掉。</li>
+<li>Event.effectAllowed 属性：就是拖拽的效果。</li>
+</ul>
+<h2 id="html-5-web-cun-chu">html5 web 存储</h2>
+<p>HTML 本地存储：优于 cookies。</p>
+<p>什么是 HTML 本地存储？
+通过本地存储（Local Storage），web 应用程序能够在用户浏览器中对数据进行本地的存储。
+在 HTML5 之前，应用程序数据只能存储在 cookie 中，包括每个服务器请求。本地存储则更安全，并且可在不影响网站性能的前提下将大量数据存储于本地。
+与 cookie 不同，存储限制要大得多（至少5MB），并且信息不会被传输到服务器。
+本地存储经由起源地（origin）（经由域和协议）。所有页面，从起源地，能够存储和访问相同的数据。</p>
+<p>HTML 本地存储对象
+HTML 本地存储提供了两个在客户端存储数据的对象：
+window.localStorage - 存储没有截止日期的数据
+window.sessionStorage - 针对一个 session 来存储数据（当关闭浏览器标签页时数据会丢失）</p>
+<h3 id="local-storage-dui-xiang">localStorage 对象</h3>
+<p>localStorage 对象存储的是没有截止日期的数据。当浏览器被关闭时数据不会被删除，在下一天、周或年中，都是可用的。</p>
+<p>eg：</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">// 存储</div><div class="line"><span class="built_in">local</span>Storage.setItem(<span class="string">"lastname"</span>, <span class="string">"Gates"</span>);</div><div class="line">或是</div><div class="line"><span class="built_in">local</span>Storage.lastname = <span class="string">"Gates"</span>;</div><div class="line"></div><div class="line"></div><div class="line">// 取回</div><div class="line"><span class="built_in">local</span>Storage.getItem(<span class="string">"lastname"</span>);</div><div class="line">或是</div><div class="line"><span class="built_in">local</span>Storage.lastname</div><div class="line"></div><div class="line">//删除</div><div class="line"><span class="built_in">local</span>Storage.removeItem(<span class="string">"keyname"</span>)</div></pre></td></tr></table></figure></p>
+<p>localStorage如何存取，删除对象</p>
+<p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> testObject = &#123; <span class="string">'one'</span>: <span class="number">1</span>, <span class="string">'two'</span>: <span class="number">2</span>, <span class="string">'three'</span>: <span class="number">3</span> &#125;;</div><div class="line"></div><div class="line"><span class="comment">// Put the object into storage</span></div><div class="line">localStorage.setItem(<span class="string">'testObject'</span>, <span class="built_in">JSON</span>.stringify(testObject));</div><div class="line"></div><div class="line"><span class="comment">// Retrieve the object from storage</span></div><div class="line"><span class="keyword">var</span> retrievedObject = localStorage.getItem(<span class="string">'testObject'</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'retrievedObject: '</span>, <span class="built_in">JSON</span>.parse(retrievedObject));</div></pre></td></tr></table></figure></p>
+<p><strong>注意：亲测表明localStorge仅仅对于同源的网站下是可用的</strong></p>
+<p>比如，对于在此链接(<code>http://stackoverflow.com/questions/2010892/storing-objects-in-html5-localstorage</code>)下设置的localStorage，那么在<code>www.baidu.com</code>下是访问不到的。但是在http://stackoverflow中是可以访问到的。</p>
+<h3 id="session-storage-dui-xiang">sessionStorage对象</h3>
+<p>sessionStorage 对象等同 localStorage 对象，不同之处在于只对一个 session 存储数据。如果用户关闭具体的浏览器标签页，数据也会被删除。</p>
+<h2 id="html-shi-jian-shu-xing">HTML事件属性</h2>
+<p>具体的事件描述参考：http://www.w3school.com.cn/tags/html_ref_eventattributes.asp</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Html]]></title>
       <url>http://yoursite.com/2016/12/26/html/</url>
       <content type="html"><![CDATA[<h1 id="html">HTML</h1>
@@ -109,9 +292,9 @@ rowspan设置表格的占用标准表格的几行；</p>
 <p>针对搜索引擎的关键词
 一些搜索引擎会利用 meta 元素的 name 和 content 属性来索引您的页面。
 下面的 meta 元素定义页面的描述：</p>
-<p><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta <span class="built_in">name</span>=<span class="string">"description"</span> content=<span class="string">"Free Web tutorials on HTML, CSS, XML"</span> /&gt;</div></pre></td></tr></table></figure></p>
+<p><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"description"</span> <span class="attr">content</span>=<span class="string">"Free Web tutorials on HTML, CSS, XML"</span> /&gt;</span></div></pre></td></tr></table></figure></p>
 <p>下面的 meta 元素定义页面的关键词：</p>
-<p><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta <span class="built_in">name</span>=<span class="string">"keywords"</span> content=<span class="string">"HTML, CSS, XML"</span> /&gt;</div></pre></td></tr></table></figure></p>
+<p><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"HTML, CSS, XML"</span> /&gt;</span></div></pre></td></tr></table></figure></p>
 <p>name 和 content 属性的作用是描述页面的内容。</p>
 <h2 id="html-shu-xing">HTML属性</h2>
 <blockquote>

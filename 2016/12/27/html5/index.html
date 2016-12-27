@@ -1,0 +1,1155 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="html5,html,front-end,web," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/avatar.jpg?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="HTML5
+HTML5的出现的目的
+
+Web浏览器之间的兼容性很低
+文档结构不够明确，过多的使用&amp;lt;div&amp;gt;
+web应用程序的功能受到了限制
+
+HTML5版本于HTML4的区别
+
+IE 6,7,8 不支持HTML5
+语法的改变
+内容类型
+
+
+text/html
+
+
+DOCTYPE 文档类型
+
+
+&amp;lt;!DOCTYPE html&amp;gt;
+
+
+指定字符编码
+
+
+&amp;lt;meta chars">
+<meta property="og:type" content="article">
+<meta property="og:title" content="html5">
+<meta property="og:url" content="http://yoursite.com/2016/12/27/html5/index.html">
+<meta property="og:site_name" content="Alvin-Blog">
+<meta property="og:description" content="HTML5
+HTML5的出现的目的
+
+Web浏览器之间的兼容性很低
+文档结构不够明确，过多的使用&amp;lt;div&amp;gt;
+web应用程序的功能受到了限制
+
+HTML5版本于HTML4的区别
+
+IE 6,7,8 不支持HTML5
+语法的改变
+内容类型
+
+
+text/html
+
+
+DOCTYPE 文档类型
+
+
+&amp;lt;!DOCTYPE html&amp;gt;
+
+
+指定字符编码
+
+
+&amp;lt;meta chars">
+<meta property="og:updated_time" content="2016-12-27T01:46:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="html5">
+<meta name="twitter:description" content="HTML5
+HTML5的出现的目的
+
+Web浏览器之间的兼容性很低
+文档结构不够明确，过多的使用&amp;lt;div&amp;gt;
+web应用程序的功能受到了限制
+
+HTML5版本于HTML4的区别
+
+IE 6,7,8 不支持HTML5
+语法的改变
+内容类型
+
+
+text/html
+
+
+DOCTYPE 文档类型
+
+
+&amp;lt;!DOCTYPE html&amp;gt;
+
+
+指定字符编码
+
+
+&amp;lt;meta chars">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: 'Alvin'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/12/27/html5/"/>
+
+
+
+
+
+  <title> html5 | Alvin-Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?10aa6be99d86164c9368d5bd303c3a93";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Alvin-Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">过程即是最好的结局</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/27/html5/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Alvin">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Alvin-Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Alvin-Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                html5
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-27T09:42:08+08:00">
+                2016-12-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/12/27/html5/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/27/html5/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">本文总阅读量</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="html-5">HTML5</h1>
+<h2 id="html-5-de-chu-xian-de-mu-de">HTML5的出现的目的</h2>
+<ul>
+<li>Web浏览器之间的兼容性很低</li>
+<li>文档结构不够明确，过多的使用<code>&lt;div&gt;</code></li>
+<li>web应用程序的功能受到了限制</li>
+</ul>
+<h2 id="html-5-ban-ben-yu-html-4-de-qu-bie">HTML5版本于HTML4的区别</h2>
+<ul>
+<li>IE 6,7,8 不支持HTML5</li>
+<li>语法的改变</li>
+<li>内容类型</li>
+</ul>
+<blockquote>
+<p>text/html</p>
+</blockquote>
+<ul>
+<li>DOCTYPE 文档类型</li>
+</ul>
+<blockquote>
+<p><code>&lt;!DOCTYPE html&gt;</code></p>
+</blockquote>
+<ul>
+<li>指定字符编码</li>
+</ul>
+<blockquote>
+<p><code>&lt;meta charset=&quot;utf=8&quot;&gt;</code></p>
+</blockquote>
+<ul>
+<li>
+<p>省略引号
+<strong>属性值可以不写双引号</strong></p>
+</li>
+<li>
+<p>带有默认值</p>
+</li>
+</ul>
+<blockquote>
+<p>checked=&quot;checked&quot;   //选中
+checked=&quot;&quot;   //选中
+check  //选中
+check=&quot;unchecked&quot;   //未选中</p>
+</blockquote>
+<h2 id="xin-zeng-yuan-su">新增元素</h2>
+<ul>
+<li>新增的结构元素
+section  ， article  ，aside，  header  ，footer ，nav  ，figure,  main</li>
+<li>新增的其他元素
+audio  ， video  ，canvas(画布)  ，mark ，time ，command ，source ，menu</li>
+<li>新增的input元素类型
+email ， url  ，number ，range</li>
+</ul>
+<h2 id="fei-chu-de-yuan-su">废除的元素</h2>
+<p>不再使用frame框架   仅支持iframe</p>
+<h2 id="xin-zeng-de-shu-xing">新增的属性</h2>
+<h2 id="fei-chu-de-shu-xing">废除的属性</h2>
+<h2 id="quan-ju-shu-xing-html-5-zhong-xin-zeng-de-te-xing">全局属性—HTML5中新增的特性</h2>
+<p><strong>可以对全局对象都适用的属性</strong></p>
+<ul>
+<li>contentEditable 属性  指定元素可编辑 ，必须是那种可以获取到鼠标焦点的
+value：true false</li>
+<li>designMode 属性 指定页面是否可以被编辑
+value：on  off</li>
+<li>hidden 属性  隐藏元素</li>
+<li>spellcheck属性  针对input和textarea输入框  新增的输入拼写检查</li>
+<li>tabindex属性   用于指定tab的显示顺序，可以让不能获取焦点的标签获取到焦点
+value：tabindex=&quot;x&quot;</li>
+</ul>
+<h2 id="biao-qian">标签</h2>
+<h3 id="chang-yong-de-biao-qian">常用的标签</h3>
+<h4 id="section">section</h4>
+<p><code>&lt;div&gt;</code>和<code>&lt;section&gt;</code>两者都有对网页进行布局的作用。<code>&lt;div&gt;</code>本身没有任何语义，仅用于页面布局或者给模块添加样式</p>
+<p><code>&lt;section&gt;</code>顾名思义就是一个章节，它适用于对文档进行分块，将文档划分为章节（常用于修饰文档大纲），或者对一篇文章进行分块，将整篇文章分成不同的内容块。</p>
+<p>**note：**注意：一个<code>&lt;section&gt;</code>元素不能是<code>&lt;address&gt;</code>元素的子节点。</p>
+<h4 id="article">article</h4>
+<p><strong><code>&lt;article&gt;</code>标签是特殊的<code>&lt;section&gt;</code>标签</strong>，与section不同，<code>&lt;article&gt;</code>标签是将文档或文章中的内容划分为相对独立的模块（如，将整本书的内容划分成多篇文章，或者将一篇文章划分成相对独立的不同的小结等），当然，我们所说的独立是指同一级别的article标签中的内容是相互独立的，所以一般在article标签内一般包含header和footer标签。</p>
+<h4 id="section-vs-article">section vs article</h4>
+<p><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">Version 1:</div><div class="line"><span class="tag">&lt;<span class="name">article</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">header</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>大家好，我是美食爱好者小丽<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">header</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>本文介绍一下美食爱好者小丽喜欢的水果。。。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">section</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>小丽喜欢的第一种水果是石榴<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>美味的石榴营养丰富，富含维C。。。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">section</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">section</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>小丽喜欢的第二种水果是葡萄<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>葡萄可以美容养颜。。。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">section</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">footer</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>版权出自小丽<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">footer</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></div><div class="line"></div><div class="line">Version 2:</div><div class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>新闻.国内专题<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">article</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">h3</span>&gt;</span>2014年南方暴雨<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>2014年南方暴雨详情<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">article</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">article</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">h3</span>&gt;</span>山西官场地震<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>山西官场地震详情介绍<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">article</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>关于两者做一下总结：一般来说,互为兄弟关系的两个相邻的<code>&lt;section&gt;</code>标签里面的内容一般是相关联的，而对于两个相邻的<code>&lt;article&gt;</code>标签而言，它们里面的内容是没有关联的，是独立的。 由上面的例子可以更加深刻地理解section和article,从语义上讲，article主要强调独立完整性，而section之间可能会有关联，每个section内容也不是完整， 正如上面的代码看到的，article是独立完整的一篇文章或者文档，而section可能有所关联且不完整。从理论上讲，article适用的内容，都可以使用section，但如果符合使用article的要求就不要使用section。</p>
+<h4 id="aside">aside</h4>
+<p>标签布局与当前文档内容相关却在此文档内容之外的内容</p>
+<h4 id="header">header</h4>
+<h4 id="footer">footer</h4>
+<h4 id="nav">nav</h4>
+<p><code>&lt;nav&gt;</code>元素代表一个部分包含链接，链接到其他页面或者同一页面的其他部分，主要定义了文档中的导航部分</p>
+<h2 id="canvas">Canvas</h2>
+<p>HTML5 的 canvas 元素使用 JavaScript 在网页上绘制图像。
+画布是一个矩形区域，您可以控制其每一像素。</p>
+<p>创建：</p>
+<p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">canvas</span> id=<span class="string">"myCanvas"</span> <span class="attribute">width</span>=<span class="string">"200"</span> height=<span class="string">"100"</span>&gt;&lt;/canvas&gt;</div></pre></td></tr></table></figure></p>
+<p><strong>canvas 元素本身是没有绘图能力的。所有的绘制工作必须在 JavaScript 内部完成</strong>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">	<span class="keyword">var</span> c=<span class="built_in">document</span>.getElementById(<span class="string">"myCanvas"</span>);</div><div class="line">	<span class="comment">//getContext("2d") 对象是内建的 HTML5 对象，拥有多种绘制路径、矩形、圆形、字符以及添加图像的方法</span></div><div class="line">	<span class="keyword">var</span> cxt=c.getContext(<span class="string">"2d"</span>);</div><div class="line">	cxt.fillStyle=<span class="string">"#FF0000"</span>;</div><div class="line">	cxt.fillRect(<span class="number">0</span>,<span class="number">0</span>,<span class="number">150</span>,<span class="number">75</span>);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="svg">SVG</h2>
+<p>HTML5 内联 SVG</p>
+<p>什么是SVG？</p>
+<ul>
+<li>SVG 指可伸缩矢量图形 (Scalable Vector Graphics)</li>
+<li>SVG 用于定义用于网络的基于矢量的图形</li>
+<li>SVG 使用 XML 格式定义图形</li>
+<li>SVG 图像在放大或改变尺寸的情况下其图形质量不会有损失</li>
+<li>SVG 是万维网联盟的标准</li>
+</ul>
+<h2 id="di-li-wei-zhi">地理位置</h2>
+<p>getCurrentPosition() 方法来获得用户的位置</p>
+<h2 id="html-5-tuo-fang">HTML5 拖放</h2>
+<p>拖放（Drag 和 Drop）是很常见的特性。它指的是您抓取某物并拖入不同的位置。
+拖放是 HTML5 标准的组成部分：任何元素都是可拖放的。</p>
+<p>如何拖放：</p>
+<blockquote>
+<p>Step1：把元素设置为可拖放，为了把一个元素设置为可拖放，请把 draggable 属性设置为 true：</p>
+</blockquote>
+<p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">img</span> id=<span class="string">"drag1"</span> src=<span class="string">"./gift.png"</span> draggable=<span class="string">"true"</span> ondragstart=<span class="string">"drag(event)"</span> <span class="attribute">width</span>=<span class="string">"336"</span> height=<span class="string">"269"</span>&gt;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>Step2：然后规定当元素被拖动时发生的事情
+ondragstart 和 setData()</p>
+</blockquote>
+<ul>
+<li>ondragstart() 可以调用一个函数（drag（event））规定拖动什么数据</li>
+<li>dataTransfer.setData() 方法设置被拖动数据的数据类型和值</li>
+</ul>
+<p><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">drag</span><span class="params">(ev)</span> </span>&#123;</div><div class="line">    ev.dataTransfer.setData(<span class="string">"text"</span>, ev.target.id);</div><div class="line">&#125;</div><div class="line"><span class="comment">//数据类型是 "text"，而值是这个可拖动元素的 id ("drag1")</span></div><div class="line"><span class="comment">//实质上是移动了这个元素到新的位置</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>Step3: 拖到何处 - ondragover</p>
+</blockquote>
+<p>ondragover 事件规定被拖动的数据能够被放置到何处。
+默认地，数据/元素无法被放置到其他元素中。为了实现拖放，我们必须阻止元素的这种默认的处理方式。
+这个任务由 ondragover 事件的 event.preventDefault() 方法完成：</p>
+<p><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">event</span>.preventDefault()</div></pre></td></tr></table></figure></p>
+<p>Step4: 进行放置 - ondrop
+当放开被拖数据时，会发生 drop 事件, ondrop 属性调用了一个函数，drop(event)：</p>
+<p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">drop</span>(<span class="params">ev</span>) </span>&#123;</div><div class="line">    ev.preventDefault();</div><div class="line">    <span class="keyword">var</span> data = ev.dataTransfer.getData(<span class="string">"text"</span>);</div><div class="line">    ev.target.appendChild(<span class="built_in">document</span>.getElementById(data));</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>解释：</p>
+<ul>
+<li>调用 preventDefault() 来阻止数据的浏览器默认处理方式（drop 事件的默认行为是以链接形式打开）</li>
+<li>通过 dataTransfer.getData() 方法获得被拖的数据。该方法将返回在 setData() 方法中设置为相同类型的任何数据</li>
+<li>被拖数据是被拖元素的 id (&quot;drag1&quot;)</li>
+<li>把被拖元素追加到放置元素中</li>
+</ul>
+<p>重点：</p>
+<ul>
+<li>DataTransfer 对象：拖拽对象用来传递的媒介，使用一般为Event.dataTransfer。</li>
+<li>draggable 属性：就是标签元素要设置draggable=true，否则不会有效果，例如：</li>
+</ul>
+<p><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">title</span>=<span class="string">"拖拽我"</span> <span class="attr">draggable</span>=<span class="string">"true"</span>&gt;</span>列表1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<ul>
+<li>ondragstart 事件：当拖拽元素开始被拖拽的时候触发的事件，此事件作用在被拖曳元素上</li>
+<li>ondragenter 事件：当拖曳元素进入目标元素的时候触发的事件，此事件作用在目标元素上</li>
+<li>ondragover 事件：拖拽元素在目标元素上移动的时候触发的事件，此事件作用在目标元素上</li>
+<li>ondrop 事件：被拖拽的元素在目标元素上同时鼠标放开触发的事件，此事件作用在目标元素上</li>
+<li>ondragend 事件：当拖拽完成后触发的事件，此事件作用在被拖曳元素上</li>
+<li>ondragleave 事件： 当拖拽的元素离开时触发，此事件作用在被拖拽元素上</li>
+<li>Event.preventDefault() 方法：阻止默认的些事件方法等执行。在ondragover中一定要执行preventDefault()，否则ondrop事件不会被触发。另外，如果是从其他应用软件或是文件中拖东西进来，尤其是图片的时候，默认的动作是显示这个图片或是相关信息，并不是真的执行drop。此时需要用用document的ondragover事件把它直接干掉。</li>
+<li>Event.effectAllowed 属性：就是拖拽的效果。</li>
+</ul>
+<h2 id="html-5-web-cun-chu">html5 web 存储</h2>
+<p>HTML 本地存储：优于 cookies。</p>
+<p>什么是 HTML 本地存储？
+通过本地存储（Local Storage），web 应用程序能够在用户浏览器中对数据进行本地的存储。
+在 HTML5 之前，应用程序数据只能存储在 cookie 中，包括每个服务器请求。本地存储则更安全，并且可在不影响网站性能的前提下将大量数据存储于本地。
+与 cookie 不同，存储限制要大得多（至少5MB），并且信息不会被传输到服务器。
+本地存储经由起源地（origin）（经由域和协议）。所有页面，从起源地，能够存储和访问相同的数据。</p>
+<p>HTML 本地存储对象
+HTML 本地存储提供了两个在客户端存储数据的对象：
+window.localStorage - 存储没有截止日期的数据
+window.sessionStorage - 针对一个 session 来存储数据（当关闭浏览器标签页时数据会丢失）</p>
+<h3 id="local-storage-dui-xiang">localStorage 对象</h3>
+<p>localStorage 对象存储的是没有截止日期的数据。当浏览器被关闭时数据不会被删除，在下一天、周或年中，都是可用的。</p>
+<p>eg：</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">// 存储</div><div class="line"><span class="built_in">local</span>Storage.setItem(<span class="string">"lastname"</span>, <span class="string">"Gates"</span>);</div><div class="line">或是</div><div class="line"><span class="built_in">local</span>Storage.lastname = <span class="string">"Gates"</span>;</div><div class="line"></div><div class="line"></div><div class="line">// 取回</div><div class="line"><span class="built_in">local</span>Storage.getItem(<span class="string">"lastname"</span>);</div><div class="line">或是</div><div class="line"><span class="built_in">local</span>Storage.lastname</div><div class="line"></div><div class="line">//删除</div><div class="line"><span class="built_in">local</span>Storage.removeItem(<span class="string">"keyname"</span>)</div></pre></td></tr></table></figure></p>
+<p>localStorage如何存取，删除对象</p>
+<p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> testObject = &#123; <span class="string">'one'</span>: <span class="number">1</span>, <span class="string">'two'</span>: <span class="number">2</span>, <span class="string">'three'</span>: <span class="number">3</span> &#125;;</div><div class="line"></div><div class="line"><span class="comment">// Put the object into storage</span></div><div class="line">localStorage.setItem(<span class="string">'testObject'</span>, <span class="built_in">JSON</span>.stringify(testObject));</div><div class="line"></div><div class="line"><span class="comment">// Retrieve the object from storage</span></div><div class="line"><span class="keyword">var</span> retrievedObject = localStorage.getItem(<span class="string">'testObject'</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'retrievedObject: '</span>, <span class="built_in">JSON</span>.parse(retrievedObject));</div></pre></td></tr></table></figure></p>
+<p><strong>注意：亲测表明localStorge仅仅对于同源的网站下是可用的</strong></p>
+<p>比如，对于在此链接(<code>http://stackoverflow.com/questions/2010892/storing-objects-in-html5-localstorage</code>)下设置的localStorage，那么在<code>www.baidu.com</code>下是访问不到的。但是在http://stackoverflow中是可以访问到的。</p>
+<h3 id="session-storage-dui-xiang">sessionStorage对象</h3>
+<p>sessionStorage 对象等同 localStorage 对象，不同之处在于只对一个 session 存储数据。如果用户关闭具体的浏览器标签页，数据也会被删除。</p>
+<h2 id="html-shi-jian-shu-xing">HTML事件属性</h2>
+<p>具体的事件描述参考：http://www.w3school.com.cn/tags/html_ref_eventattributes.asp</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/html5/" rel="tag"># html5</a>
+          
+            <a href="/tags/html/" rel="tag"># html</a>
+          
+            <a href="/tags/front-end/" rel="tag"># front-end</a>
+          
+            <a href="/tags/web/" rel="tag"># web</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/26/html/" rel="next" title="Html">
+                <i class="fa fa-chevron-left"></i> Html
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/12/27/html5/"
+     data-title="html5"
+     data-content=""
+     data-url="http://yoursite.com/2016/12/27/html5/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/12/27/html5/"
+           data-title="html5" data-url="http://yoursite.com/2016/12/27/html5/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Alvin" />
+          <p class="site-author-name" itemprop="name">Alvin</p>
+          <p class="site-description motion-element" itemprop="description">世界如此之大，做一个什么样的自己完全取决于你自己的选择</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/sialvsic" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#html-5"><span class="nav-number">1.</span> <span class="nav-text">HTML5</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#html-5-de-chu-xian-de-mu-de"><span class="nav-number">1.1.</span> <span class="nav-text">HTML5的出现的目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#html-5-ban-ben-yu-html-4-de-qu-bie"><span class="nav-number">1.2.</span> <span class="nav-text">HTML5版本于HTML4的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xin-zeng-yuan-su"><span class="nav-number">1.3.</span> <span class="nav-text">新增元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fei-chu-de-yuan-su"><span class="nav-number">1.4.</span> <span class="nav-text">废除的元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xin-zeng-de-shu-xing"><span class="nav-number">1.5.</span> <span class="nav-text">新增的属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fei-chu-de-shu-xing"><span class="nav-number">1.6.</span> <span class="nav-text">废除的属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#quan-ju-shu-xing-html-5-zhong-xin-zeng-de-te-xing"><span class="nav-number">1.7.</span> <span class="nav-text">全局属性—HTML5中新增的特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#biao-qian"><span class="nav-number">1.8.</span> <span class="nav-text">标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#chang-yong-de-biao-qian"><span class="nav-number">1.8.1.</span> <span class="nav-text">常用的标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#section"><span class="nav-number">1.8.1.1.</span> <span class="nav-text">section</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#article"><span class="nav-number">1.8.1.2.</span> <span class="nav-text">article</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#section-vs-article"><span class="nav-number">1.8.1.3.</span> <span class="nav-text">section vs article</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#aside"><span class="nav-number">1.8.1.4.</span> <span class="nav-text">aside</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#header"><span class="nav-number">1.8.1.5.</span> <span class="nav-text">header</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#footer"><span class="nav-number">1.8.1.6.</span> <span class="nav-text">footer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nav"><span class="nav-number">1.8.1.7.</span> <span class="nav-text">nav</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#canvas"><span class="nav-number">1.9.</span> <span class="nav-text">Canvas</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#svg"><span class="nav-number">1.10.</span> <span class="nav-text">SVG</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#di-li-wei-zhi"><span class="nav-number">1.11.</span> <span class="nav-text">地理位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#html-5-tuo-fang"><span class="nav-number">1.12.</span> <span class="nav-text">HTML5 拖放</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#html-5-web-cun-chu"><span class="nav-number">1.13.</span> <span class="nav-text">html5 web 存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#local-storage-dui-xiang"><span class="nav-number">1.13.1.</span> <span class="nav-text">localStorage 对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#session-storage-dui-xiang"><span class="nav-number">1.13.2.</span> <span class="nav-text">sessionStorage对象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#html-shi-jian-shu-xing"><span class="nav-number">1.14.</span> <span class="nav-text">HTML事件属性</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alvin</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user">本站访客数</i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span>次数</span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye">本站总访问量</i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"sialvsic"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
